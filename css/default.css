@@ -1,0 +1,12 @@
+body {
+    background: url("../img/bg-lake.png") no-repeat fixed center;
+    background-size: cover;
+}
+
+/*
+ * Potato Friend found here
+ **/
+#companion {
+    float: right;
+    padding: 300px 300px;
+}
