@@ -11,25 +11,41 @@ $(document).ready(function() {
 function initializePage() {
 	$('#taskform').hide();
 	$('#enter').hide();
-	$("#addbutton").click(function(e) {
+	$('#cancel').hide();
+	$('#addbutton').click(function(e) {
+		$('#addbutton').hide();
 		$('#taskform').show();
 		$('#enter').show();
-		//$('#enter').click(updateList);
-		
+		$('#cancel').show();
 	});
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	
-	$("#enter").click(updateList);
+	$('#enter').click(updateList);
+	$('#cancel').click(cancelList);
 }
 
 function updateList() {
 	var add = $("#taskform").val();
-	$('#tasklist').append('<li class="list-group-item">' + add + '</li>');
+	if ( add.length != 0 ) {
+	  $('#tasklist').append('<a onclick="taskEdit()" href="#"><li class="list-group-item"><i class="glyphicon glyphicon-edit"></i> ' + add + '</li></a>');
+	}
 }
 
 
+/* Currently how to hide the text field */
+function cancelList() {
+	$('#taskform').hide();
+	$('#enter').hide();
+	$('#cancel').hide();
+	$('#addbutton').show();
+}
+
+/* Placeholder alert to indicate that a task can be clicked */
+function taskEdit() {
+	alert("You've clicked on a task!  Unfortunately, we're working on this. D:");
+}
 
 
 

@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-      <!-- CSS -->
-      <meta charset="utf-8">
+  <head>
+    <title>MOTIVATOR</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/default.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/bootstrapMobile.css">
-    </head>
+
+    <!-- CSS -->
+    <link href="css/default.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrapMobile.css">
+  </head>
 
 	<body>
+
+    <!-- NAVIGATION: HEADER --> <!-- START
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid container">
-        <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container-fluid container"> END -->
+        <!-- Brand and toggle get grouped for better mobile display --> <!-- START
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -22,9 +26,9 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Brand</a>
-        </div>
+        </div> END -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Collect the nav links, forms, and other content for toggling --> <!-- START
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
@@ -61,44 +65,52 @@
               </ul>
             </li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+        </div> END--> <!-- /.navbar-collapse --> <!-- START
+      </div> END--> <!-- /.container-fluid --> <!-- START
+    </nav> END-->
+    <!-- END NAVIGATION: HEADER -->
 
+    <!-- NAGIVATION: FOOTER -->
+    <div id="footer">
+      <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
+        <div class="row" id="bottomNav">
+          <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
+          <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-th-list"></i><br>Friends</a></div>
+          <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-user"></i><br>Profile</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- END NAVIGATION: HEADER -->
 
-   <div id="footer">
-  <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
-  <div class="row" id="bottomNav">
-    <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-circle-arrow-left"></i><br>Home</a></div>
-    <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-circle-arrow-down"></i><br>Friends</a></div>
-    <div class="col-xs-4 text-center"><a href="#"><i class="glyphicon glyphicon-circle-arrow-right"></i><br>Profile</a></div>
-  </div>
-  </div>
-</div>
-
-
-		<h1>Motivator</h1>
-
-		<p>Make a list of what you want to do</p>
-
-    <div class="jumbotron">
+    <!-- BODY CODE -->
+    <div class="container">
+	    <!--<h1>Motivator</h1>
+  	  <p>Make a list of what you want to do</p>-->
+      <div class="jumbotron">
         <h1>What do you need to do today?</h1>
-        <button type="button" class="btn btn-default" id="addbutton">Add Task</button>
-        <div class="form-group">
+        <hr />
+        <div class="list-frame">
+          <ul class="list-group" id="tasklist"></ul>
+        </div>
+        <hr />
+        <div align="right">
+          <button type="button" class="btn btn-xs" id="addbutton">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+        <!--<button type="button" class="btn btn-default" id="addbutton">Add Task</button>-->
+        <div class="form-group" align="center">
           <input type="text" class="form-control" id="taskform" placeholder="Name your task">
-          <button type="button" class="btn btn-default" id="enter">Enter</button>
+          <button type="button" class="btn btn-primary" id="enter">Enter</button>
+          <button type="button" class="btn btn-secondary" id="cancel">Cancel</button>
         </div>
       </div>
-
-        <div id="companion">
-          <img src="img/mpp-250.png" width="125" />
-        </div>
-
-        <div>
-        <ul class="list-group" id="tasklist">
-      
-        </ul>
+      <div id="companion" align="right">
+        <img src="img/mpp-250.png" width="125" />
       </div>
+    </div>
+
+    <!-- END BODY CODE -->
 
 	</body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

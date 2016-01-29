@@ -3,10 +3,39 @@ body {
     background-size: cover;
 }
 
+.container {
+    background-color: rgba(255,255,255,0.5);
+    max-width: 700px;
+
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+	max-height: 70%;
+	top: -100px;
+}
+
+/* How to make the task lists scroll after reaching a certain length */
+.list-frame {
+	max-height: 195px;
+	width: 100%;
+	overflow: scroll;
+}
+
+/* How to not make the textfield ridiculously wide */
+.form-control {
+	width: 50%;
+	max-width: 400px;
+}
+
 /*
  * Potato Friend found here
- **/
+ * TODO: Figure out how to position the potato friend
+ *
+ */
 #companion {
-    float: right;
-    padding: 300px 300px;
+    position: relative;
+    top: -110px;
 }
+
