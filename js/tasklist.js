@@ -47,37 +47,12 @@ function taskEdit() {
 	alert("You've clicked on a task!  Unfortunately, we're working on this. D:");
 }
 
-
-
-
-function updateProject(e) {
-   var projectID = $('#project').val();
-   $(projectID).animate({
-      width: $('#width').val()
-   });
-
-   var newText = $('#description').val();
-   $(projectID + " .project-description").text(newText);
+/* Placeholder alert to indicate that the inbox can be clicked*/
+function inboxClick() {
+	alert("Inbox screen will open here!  If it existed... soon.")
 }
 
-function projectClick(e) {
-
-	console.log("Project clicked");
-	//prevent the page from reloading
-	e.preventDefault();
-    var projectTitle = $(this).find("p").text();
-    var jumbotronHeader = $(".jumbotron h1");
-    jumbotronHeader.text(projectTitle);
-    console.log("Number of matching items: " + jumbotronHeader.length);
-	//In an event handler, $(this) refers to
-	// the object that triggered the vent
-	$(this).css("background-color", "#7fff00");
-	var containingProject = $(this).closest(".project");
-    var description = $(containingProject).find(".project-description");
-    var count = 0;
-    if (description.length == 0) {
-       $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>");
-    } else {
-    	$(this).fadeToggle();
-    }
+/* Placeholder alert to indicate that the inbox can be clicked*/
+function settingsClick() {
+	alert("Settings screen will open here!  If it existed... soon.")
 }

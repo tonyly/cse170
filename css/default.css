@@ -39,3 +39,23 @@ body {
     top: -110px;
 }
 
+.glyphicon.glyphicon-cog {
+	font-size: 20px;
+}
+
+.glyphicon.glyphicon-envelope {
+	font-size: 20px;
+}
+
+.potatoskins img {
+	max-width: 75px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.potatoskins img:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
