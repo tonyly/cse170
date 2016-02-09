@@ -6,8 +6,7 @@ exports.view = function(req, res){
 	res.render('home', data);
 };
 
-/*
+
 exports.showHome = function(req, res) {
 	res.render('home');
 }
-*/
