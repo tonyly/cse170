@@ -1,0 +1,61 @@
+body {
+    background: url("../img/bg-lake.png") no-repeat fixed center;
+    background-size: cover;
+}
+
+.container {
+    background-color: rgba(255,255,255,0.5);
+    max-width: 700px;
+
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+	max-height: 70%;
+	top: -100px;
+}
+
+/* How to make the task lists scroll after reaching a certain length */
+.list-frame {
+	max-height: 195px;
+	width: 100%;
+	overflow: scroll;
+}
+
+/* How to not make the textfield ridiculously wide */
+.form-control {
+	width: 50%;
+	max-width: 400px;
+}
+
+/*
+ * Potato Friend found here
+ * TODO: Figure out how to position the potato friend
+ *
+ */
+#companion {
+    position: relative;
+    top: -110px;
+}
+
+.glyphicon.glyphicon-cog {
+	font-size: 20px;
+}
+
+.glyphicon.glyphicon-envelope {
+	font-size: 20px;
+}
+
+.potatoskins img {
+	max-width: 75px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.potatoskins img:hover {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}

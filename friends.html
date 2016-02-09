@@ -29,7 +29,9 @@
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
       <div class="list-frame">
-        <ul class="list-group" id="friendlist"></ul>
+        {{#each friends}}
+            <a href="#"><li class="list-group-item>{{name}}</li></a>  
+            {{/each}}
       </div>
 
     

@@ -14,6 +14,18 @@
 			"name": "cse132a jdbc",
 			"date": "02/23/2016",
 			"time": "07:00pm"			
-		},
+		}
+	],
+
+	"friends": [
+        {
+             "name": "tonylydoesntlie"
+        },
+        {
+        	"name": "janedoe123"
+        },
+        {
+        	"name": "johndoe858"
+        }
 	]
 }
