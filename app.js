@@ -44,6 +44,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 //app.get('/home', home.showHome);
 app.get('/home', home.view);
+pp.get('/home', home.showHome);
 app.get('/friends', friends.view);
 app.get('/myprofile',myprofile.view);
 app.get('/settings', settings.view);
