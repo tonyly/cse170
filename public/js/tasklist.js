@@ -9,12 +9,11 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$('#taskform').hide();
+	$('#taskName').hide();
 	$('#enter').hide();
 	$('#cancel').hide();
 	$('#addbutton').click(function(e) {
-		$('#addbutton').hide();
-		$('#taskform').show();
+		$('#taskName').show();
 		$('#enter').show();
 		$('#cancel').show();
 	});
@@ -27,19 +26,33 @@ function initializePage() {
 }
 
 function updateList() {
-	var add = $("#taskform").val();
-	if ( add.length != 0 ) {
-	  $('#tasklist').append('<a onclick="taskEdit()" href="#"><li class="list-group-item"><i class="glyphicon glyphicon-edit"></i> ' + add + '</li></a>');
+	var name = $("#taskName").val();
+	var date = $("#taskDate").val();
+	var time = $("#taskTime").val();
+	//  We need the length to assign an id
+	var task = $("#tasklist li").length;
+
+	console.log(task);
+
+	if(name.length <= 0) {
+	  alert("Please input a task name.");
+	}
+	else {
+	  $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
+		 ' class="list-group-item">' +
+			'<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
+			'<p>Deadline: ' + date + ', ' + time + '</p></li>' +
+			'</a>');
 	}
 }
 
 
 /* Currently how to hide the text field */
 function cancelList() {
-	$('#taskform').hide();
+	/*$('#taskform').hide();
 	$('#enter').hide();
 	$('#cancel').hide();
-	$('#addbutton').show();
+	$('#addbutton').show();*/
 }
 
 /* Placeholder alert to indicate that a task can be clicked */
