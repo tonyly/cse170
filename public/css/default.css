@@ -28,7 +28,7 @@ html, body {
 
 /* How to make the task lists scroll after reaching a certain length */
 .list-frame {
-	max-height: 160%;
+	max-height: 100%;
 	width: 100%;
 	overflow: scroll;
 }
