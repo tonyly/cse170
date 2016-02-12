@@ -22,13 +22,54 @@
 
 	"friends": [
         {
-             "name": "tonylydoesntlie"
+             "name": "tonylydoesntlie",
+             "challenges": 1
         },
         {
-        	"name": "janedoe123"
+        	"name": "janedoe123",
+        	"challenges": 0
         },
         {
-        	"name": "johndoe858"
+        	"name": "johndoe858",
+        	"challenges": 0
         }
+	],
+
+	"messages": [
+	    {
+            "subject": "tonylydoesntlie has challenged you",
+            "body": "tonylydoesntlie has challenged you to do these tasks",
+            "date": "02/09/2016",
+            "status": 1
+
+	    },
+	    {
+            "subject": "janedoe123 has challenged you",
+            "body": "janedoe123 has challenged you to do these tasks",
+            "date": "02/10/2016",
+            "status": 1
+
+	    },
+	    {
+            "subject": "tonylydoesntlie has challenged you",
+            "body": "tonylydoesntlie has challenged you to do these tasks",
+            "date": "02/11/2016",
+            "status": 1
+
+	    },
+	    {
+            "subject": "johndoe858 has challenged you",
+            "body": "johndoe858 has challenged you to do these tasks",
+            "date": "02/11/2016",
+            "status": 1
+
+	    },
+	    {
+            "subject": "johndoe858 has challenged you",
+            "body": "johndoe858 has challenged you to do these tasks",
+            "date": "02/12/2016",
+            "status": 1
+
+	    }
 	]
 }

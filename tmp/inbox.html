@@ -15,35 +15,16 @@
   <body>
 
   <div class="container">
-      <div align="center">
-      <h1>Friends</h1>
-    </div>
-      <div class="row" align="center">
-        <div class="col-lg-6">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-          </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
-      </div><!-- /.row -->
-      <div class="list-frame">
-        {{#each friends}}
-            <a href="#"><li class="list-group-item">{{name}}</a>
-            <button type="button" style="float: right;" onclick="alert('Challenge Sent!')">Challenge!</button>  
-            <button type="button" style="float: right;" onclick="alert('Delete Friend!')">Delete Friend</button>  
-            </li>
-        {{/each}}
-      </div>
+      
 
-    
+    <h1>Inbox</h1>
+    <a href="myprofile.html"><h1>Back</h1></a>
     <div id="footer">
       <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
         <div class="row" id="bottomNav">
-          <div class="col-xs-4 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
-          <div class="col-xs-4 text-center"><a href="/friends"><i class="glyphicon glyphicon-th-list"></i><br>Friends</a></div>
-          <div class="col-xs-4 text-center"><a href="/myprofile"><i class="glyphicon glyphicon-user"></i><br>Profile</a></div>
+          <div class="col-xs-4 text-center"><a href="index.html"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
+          <div class="col-xs-4 text-center"><a href="friends.html"><i class="glyphicon glyphicon-th-list"></i><br>Friends</a></div>
+          <div class="col-xs-4 text-center"><a href="myprofile.html"><i class="glyphicon glyphicon-user"></i><br>Profile</a></div>
         </div>
       </div>
     </div>
