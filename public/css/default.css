@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+hr.line {
+	margin: 10px;
+}
+
 .container {
     background-color: rgba(255,255,255,0.5);
     max-width: 700px;
@@ -21,9 +25,14 @@ html, body {
 	height: 75%;
 }
 
-.tab-content, .tab-pane {
+.tab-content{
 	position: relative;
-	height: 65%;
+	height: 70%;
+}
+
+.tab-pane {
+	position: relative;
+	height: 100%;
 }
 
 /* How to make the task lists scroll after reaching a certain length */
@@ -37,6 +46,10 @@ html, body {
 .form-control {
 	width: 50%;
 	max-width: 400px;
+}
+
+#taskDate, #taskTime{
+	z-index: 1500 !important;
 }
 
 /*

@@ -12,11 +12,19 @@ function initializePage() {
 	$('#taskName').hide();
 	$('#enter').hide();
 	$('#cancel').hide();
+    $('#deadlinefields').hide();
 	$('#addbutton').click(function(e) {
 		$('#taskName').show();
 		$('#enter').show();
 		$('#cancel').show();
 	});
+
+
+    $('#taskDate').datepicker({
+        todayHighlight: true,
+        minDate: 0
+    });
+
 
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
@@ -32,18 +40,57 @@ function updateList() {
 	//  We need the length to assign an id
 	var task = $("#tasklist li").length;
 
+    var deadline = $("#taskDeadlineCheck").prop('checked');
+
+	var fields = ["task name", "date", "time", "for the deadline"];
+
 	console.log(task);
 
-	if(name.length <= 0) {
-	  alert("Please input a task name.");
+	/*if (deadline) {
+
+
+	}
+	else if (name.length <= 0){
+		alert("Please input a " + fields[0] + ".");
 	}
 	else {
-	  $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
-		 ' class="list-group-item">' +
+		$('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
+			' class="list-group-item">' +
 			'<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
-			'<p>Deadline: ' + date + ', ' + time + '</p></li>' +
+			'<p>Deadline: None</p></li>' +
 			'</a>');
+	}*/
+
+    // CHANGE THIS LATER
+	if (name.length <= 0) {
+	  alert("Please input a task name.");
 	}
+	else if (deadline) {
+      if (date.length <= 0 && time.length <= 0) {
+          alert("Please input a date and time for the deadline.");
+      }
+      else if (date.length <= 0) {
+          alert("Please input a date for the deadline.");
+      }
+      else if (time.length <= 0) {
+          alert("Please input a time for the deadline.");
+      } else {
+
+        $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
+            ' class="list-group-item">' +
+            '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
+            '<p>Deadline: ' + date + ', ' + time + '</p></li>' +
+            '</a>');
+      }
+	}
+    else {
+      $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
+          ' class="list-group-item">' +
+          '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
+           '<p>Deadline: None</p></li>' +
+          '</a>');
+
+    }
 }
 
 
@@ -68,4 +115,17 @@ function inboxClick() {
 /* Placeholder alert to indicate that the inbox can be clicked*/
 function settingsClick() {
 	alert("Settings screen will open here!  If it existed... soon.")
+}
+
+/* */
+function toggleDeadline(classID, obj) {
+	var input = $(obj);
+    console.log(input);
+	if( input.prop('checked')) {
+		$(classID).show();
+	}
+	else {
+		$(classID).hide();
+	}
+
 }
