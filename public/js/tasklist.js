@@ -9,15 +9,9 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$('#taskName').hide();
-	$('#enter').hide();
-	$('#cancel').hide();
-    $('#deadlinefields').hide();
-	$('#addbutton').click(function(e) {
-		$('#taskName').show();
-		$('#enter').show();
-		$('#cancel').show();
-	});
+
+    $('#taskDeadlineFields').hide();
+    $('#editDeadlineFields').hide();
 
 
     $('#taskDate').datepicker({
@@ -29,98 +23,177 @@ function initializePage() {
 	// Add any additional listeners here
 	// example: $("#div-id").click(functionToCall);
 	
-	$('#enter').click(updateList);
-	$('#cancel').click(cancelList);
+	$('#taskEnter').click(addList);
+    $('#taskCancel').click(cancelAdd);
+
+    $('#editEnter').click(merp);
+    $('#editCancel').click(cancelEdit);
+
+    $('#delete').click(deleteTask);
+
+
+
 }
 
-function updateList() {
+
+function addList(e) {
+    e.preventDefault();
+
 	var name = $("#taskName").val();
 	var date = $("#taskDate").val();
 	var time = $("#taskTime").val();
 	//  We need the length to assign an id
-	var task = $("#tasklist li").length;
+	var task = $("#taskList li").length;
+    task = task + 1;
+    var taskID = "task" + task;
 
     var deadline = $("#taskDeadlineCheck").prop('checked');
 
-	var fields = ["task name", "date", "time", "for the deadline"];
+    var fields = ["• Task Name", "• Deadline Date", "• Deadline Time"];
+    var warn = "You are missing the following field(s):";
 
-	console.log(task);
-
-	/*if (deadline) {
-
-
-	}
-	else if (name.length <= 0){
-		alert("Please input a " + fields[0] + ".");
-	}
-	else {
-		$('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
-			' class="list-group-item">' +
-			'<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
-			'<p>Deadline: None</p></li>' +
-			'</a>');
-	}*/
-
-    // CHANGE THIS LATER
-	if (name.length <= 0) {
-	  alert("Please input a task name.");
-	}
-	else if (deadline) {
-      if (date.length <= 0 && time.length <= 0) {
-          alert("Please input a date and time for the deadline.");
-      }
-      else if (date.length <= 0) {
-          alert("Please input a date for the deadline.");
-      }
-      else if (time.length <= 0) {
-          alert("Please input a time for the deadline.");
-      } else {
-
-        $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
-            ' class="list-group-item">' +
-            '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
-            '<p>Deadline: ' + date + ', ' + time + '</p></li>' +
-            '</a>');
-      }
-	}
+    if (deadline) {
+        if (name.length > 0 && date.length > 0 && time.length > 0) {
+            $('#taskList').append('<a data-toggle="modal" data-target="#editModal" id="taskObj" onclick="openEdit(this)" href="#">' +
+                '<li class="list-group-item" id="' + taskID +'">' +
+                '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
+                '<p>Deadline: ' + date + ', ' + time + '</p></li>' +
+                '</a>');
+            $("#taskModal").modal('hide');
+            $("#taskName").val('');
+            $("#taskDate").val('');
+            $("#taskTime").val('');
+            $("#taskDeadlineCheck").prop("checked", false);
+            $('#taskDeadlineFields').hide();
+        }
+        else {
+            if (name.length <= 0) {
+                warn = warn + "\n" + fields[0];
+            }
+            if (date.length <= 0) {
+                warn = warn + "\n" + fields[1];
+            }
+            if (time.length <= 0) {
+                warn = warn + "\n" + fields[2];
+            }
+            alert(warn);
+        }
+    }
     else {
-      $('#tasklist').append('<a data-toggle="modal" data-target="#editModal" href="#">' + '<li' +
-          ' class="list-group-item">' +
-          '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
-           '<p>Deadline: None</p></li>' +
-          '</a>');
-
+        if (name.length <= 0) {
+            alert("You are missing a task name.");
+        }
+        else {
+            $('#taskList').append('<a data-toggle="modal" data-target="#editModal" id="taskObj" onclick="openEdit(this)" href="#">' +
+                '<li class="list-group-item" id="' + taskID + '">' +
+                '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
+                '<p>Deadline: None</p></li>' +
+                '</a>');
+            $("#taskModal").modal('hide');
+            $("#taskName").val('');
+            $("#taskDate").val('');
+            $("#taskTime").val('');
+            $("#taskDeadlineCheck").prop("checked", false);
+            $('#taskDeadlineFields').hide();
+        }
     }
 }
 
-
-/* Currently how to hide the text field */
-function cancelList() {
-	/*$('#taskform').hide();
-	$('#enter').hide();
-	$('#cancel').hide();
-	$('#addbutton').show();*/
+function cancelAdd(e) {
+    $("#taskModal").modal('hide');
+    $("#taskName").val('');
+    $("#taskDate").val('');
+    $("#taskTime").val('');
+    $("#taskDeadlineCheck").prop("checked", false);
+    $('#taskDeadlineFields').hide();
 }
 
-/* Placeholder alert to indicate that a task can be clicked */
-function taskEdit() {
-	alert("You've clicked on a task!  Unfortunately, we're working on this. D:");
+
+function merp(e) {
+    var obj = $(this);
+
+    console.log(obj);
 }
 
-/* Placeholder alert to indicate that the inbox can be clicked*/
-function inboxClick() {
-	alert("Inbox screen will open here!  If it existed... soon.")
+function openEdit(obj) {
+    var task = $(obj);
+
+    var taskHead = task.find(".list-group-item-heading");
+    var taskName = taskHead.text().substr(1);
+    $("#editTask").val(taskName);
+
+    var taskBody = task.find("p");
+    var taskDead = taskBody.text().substr("Deadline: ".length);
+    var taskDateTime = taskDead.split(", ");
+
+    // If it says "None, there is no deadline."  Otherwise, DEADLINE.
+    if(taskDead === "None") {
+        $("#editDeadlineCheck").prop("checked", false);
+        $('#editDeadlineFields').hide();
+        $("#editDate").val('');
+        $("#editTime").val('');
+    }
+    else {
+        $("#editDeadlineCheck").prop("checked", true);
+        $('#editDeadlineFields').show();
+
+        $("#editDate").val(taskDateTime[0]);
+        $("#editTime").val(taskDateTime[1]);
+    }
+    return;
 }
 
-/* Placeholder alert to indicate that the inbox can be clicked*/
-function settingsClick() {
-	alert("Settings screen will open here!  If it existed... soon.")
+
+function editTask(objID) {
+    var obj = $("#"+objID.data);
+
+    var taskHead = obj.find(".list-group-item-heading");
+
+
+    var name = $("#editTask").val();
+    var date = $("#editDate").val();
+    var time = $("#editTime").val();
+    var deadline = $("#editDeadlineCheck").prop('checked');
+
+    console.log(taskHead);
+    if (deadline) {
+
+    }
+    else {
+        if(name.length <= 0) {
+            alert("You are missing a task name.");
+        }
+        else {
+            console.log(taskHead.html());
+        }
+    }
+}
+
+function deleteTask(e) {
+    e.preventDefault();
+    var obj = $(this);
+
+    $('#editModal').on('show.bs.modal', function (e) {
+        var $invoker = $(e.relatedTarget);
+    });
+
+    console.log(obj);
+}
+
+
+function cancelEdit(e) {
+    $("#editModal").modal('hide');
+    $("#editName").val('');
+    $("#editDate").val('');
+    $("#editTime").val('');
+    $("#editDeadlineCheck").prop("checked", false);
+    $('#editDeadlineFields').hide();
+
 }
 
 /* */
 function toggleDeadline(classID, obj) {
 	var input = $(obj);
-    console.log(input);
 	if( input.prop('checked')) {
 		$(classID).show();
 	}

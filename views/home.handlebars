@@ -76,10 +76,11 @@
         <div class="tab-content">
           <div class="tab-pane fade active in" id="home">
             <div class="list-frame">
-             <ul class="list-group" id="tasklist">
+             <ul class="list-group" id="taskList">
               {{#each tasks}}
-              <a data-toggle="modal" data-target="#editModal" href="#">
-                  <li class="list-group-item" id="{{id}}">
+              <!--<a data-toggle="modal" data-target="#editModal" onclick="openEdit(this)" href="#">-->
+              <a data-toggle="modal" data-backdrop="static" data-target="#editModal" id="taskObj" onclick="openEdit(this)" href="#">
+                  <li class="list-group-item" id="task{{id}}">
                     <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> {{name}}</h4>
                     <p>Deadline: {{date}}, {{time}}</p>
                   </li>
@@ -97,7 +98,7 @@
                   <li class = "list-group-item">
                     <h4 class="list-group-item-heading">VS {{name}}</h4>
                   </li>
-                <a>
+                </a>
                 {{/each}}
                </ul>
             </div>
@@ -105,7 +106,7 @@
         </div>
         <hr class="line" />
         <div align="right">
-          <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#taskModal" id="addbutton">
+          <button type="button" class="btn btn-lg" data-toggle="modal" data-backdrop="static" data-target="#taskModal" id="addbutton">
             <span class="glyphicon glyphicon-plus"></span>
           </button>
         </div>
@@ -116,7 +117,7 @@
             <div class="modal-content">
               <!-- MODAL HEADER -->
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" onclick="cancelAdd()" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">CREATE A NEW TASK</h4>
               </div>
               <!-- MODAL BODY: FORM -->
@@ -130,12 +131,13 @@
                   <!-- DEADLINE -->
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" onclick="toggleDeadline('#deadlinefields', this)" id="taskDeadlineCheck" />
+                      <input type="checkbox" onclick="toggleDeadline('#taskDeadlineFields', this)"
+                             id="taskDeadlineCheck" />
                         Deadline?
                     </label>
                   </div>
 
-                  <div id="deadlinefields">
+                  <div id="taskDeadlineFields">
                     <!-- DATE -->
                     <div class="form-group">
                       <div class="input-group date">
@@ -160,8 +162,8 @@
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="enter">Enter</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="taskEnter">Enter</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="taskCancel">Cancel</button>
               </div>
             </div>
           </div>
@@ -170,12 +172,13 @@
 
 
       <!-- MODAL TO EDIT TASKS -->
-        <div id="editModal" class="modal fade" role="dialog">
+        {{#each tasks}}
+        <div id="editModal{{id}}" class="modal fade" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
               <!-- MODAL HEADER -->
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" onclick="cancelEdit()" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">EDIT TASK</h4>
               </div>
               <!-- MODAL BODY: FORM -->
@@ -183,24 +186,25 @@
                 <div role="form">
                   <!-- TASK NAME -->
                   <div class="form-group">
-                    <label for="taskform">Task Name</label>
-                    <input type="text" class="form-control" id="taskform" value="Merp">
+                    <label for="editTask">Task Name</label>
+                    <input type="text" class="form-control" id="editTask" value="Task Name">
                   </div>
                   <!-- DEADLINE -->
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox" id="editDeadlineCheck" /> Deadline?
+                      <input type="checkbox" onclick="toggleDeadline('#editDeadlineFields', this)"
+                             id="editDeadlineCheck" /> Deadline?
                     </label>
                   </div>
 
-                  <div id="deadlinefields">
+                  <div id="editDeadlineFields">
                     <!-- DATE -->
                     <div class="form-group">
                       <div class="input-group date">
                         <span class="input-group-addon">
                           <i class="glyphicon glyphicon-calendar"></i>
                         </span>
-                        <input type="text" class="form-control" id="editDate" placeholder="Date"/>
+                        <input type="text" class="form-control" id="editDate" value="Deadline Date"/>
                       </div>
                     </div>
 
@@ -211,7 +215,7 @@
                         <span class="input-group-addon">
                           <i class="glyphicon glyphicon-time"></i>
                         </span>
-                        <input type="text" class="form-control" value="Deadline Time"/>
+                        <input type="text" class="form-control" id="editTime" value="Deadline Time"/>
                       </div>
                     </div>
                   </div>
@@ -221,12 +225,13 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-success" id="done">Done</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal" id="delete">Delete</button>
-                <button type="button" class="btn btn-primary" id="enter">Enter</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="editEnter">Enter</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="editCancel">Cancel</button>
                 </div>
               </div>
             </div>
           </div>
+       {{/each}}
       
       <div id="companion" align="right">
         <img src="/img/mpp-250.png" width="75" />
