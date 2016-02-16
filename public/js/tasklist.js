@@ -51,6 +51,12 @@ function addList(e) {
     var fields = ["• Task Name", "• Deadline Date", "• Deadline Time"];
     var warn = "You are missing the following field(s):";
 
+    //for persistent data
+    var data = {"id": 4,"name": name,"date": date,"time": time};
+    $.post('/home', data, function (res) {
+
+    });
+
     if (deadline) {
         if (name.length > 0 && date.length > 0 && time.length > 0) {
             $('#taskList').append('<a data-toggle="modal" data-target="#editModal' + task + '" id="taskObj" onclick="openEdit(this)" href="#">' +
