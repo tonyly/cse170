@@ -53,6 +53,7 @@ function addList(e) {
 
     //for persistent data
     var data = {"id": 4,"name": name,"date": date,"time": time};
+    data.type ="post";
     $.post('/home', data, function (res) {
 
     });
@@ -172,6 +173,13 @@ function deleteTask(e) {
 
     $('#editModal').on('show.bs.modal', function (e) {
         var $invoker = $(e.relatedTarget);
+    });
+
+    var data = {type: "delete"};
+    data.id = 0;
+
+    $.post('/home', data, function (res) {
+
     });
 
     console.log(obj);

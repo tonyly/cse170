@@ -13,5 +13,14 @@ exports.showHome = function(req, res) {
 
 exports.addTask = function (req, res) {
 	var postData = req.body;
-	data.tasks.push(postData);
+	var type = postData.type;
+	if (type === "post") {
+		data.tasks.push(postData);
+	} else if (type === "delete") {
+		if (postData.id != undefined) {
+		console.log('deleting');
+			data.tasks.splice(Number(postData.id), 1);
+			console.log(data.tasks);
+		}
+	}
 };
