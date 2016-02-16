@@ -46,6 +46,28 @@ function updateList() {
 
 	console.log(task);
 
+	var data = {"id": 4,"name": name,"date": date,"time": time};
+	//var key = 'tasks';
+	//addtoStorage(key,data);
+
+	$.post('/home', data, function (res) {
+
+	});
+	
+	// Not understanding what data is. Cant use PHP in javascript?
+	/*
+	<?php
+	  $data[] = $_POST['data'];
+
+      $inp = file_get_contents('../../data.json');
+	  $tempArray = json_decode($inp);
+	  array_push($tempArray, $data);
+	  $jsonData = json_encode($tempArray);
+	  file_put_contents('../../data.json', $jsonData);
+	?>
+	*/
+	
+
 	/*if (deadline) {
 
 
@@ -61,7 +83,7 @@ function updateList() {
 			'</a>');
 	}*/
 
-    // CHANGE THIS LATER
+    // TODO: CHANGE THIS LATER
 	if (name.length <= 0) {
 	  alert("Please input a task name.");
 	}
@@ -93,6 +115,34 @@ function updateList() {
     }
 }
 
+/*
+//addto storage?
+function addtoStorage(key, data) {
+    if (typeof(Storage) !== "undefined") {
+        if (localStorage.getItem(key)) {
+            console.log("Local Storage stuff" + localStorage.getItem(key));
+            var olddata = JSON.parse(localStorage.getItem(key));
+            var newdata = null;
+            if(olddata instanceof Array){
+                olddata.push(data);
+                newdata = olddata;
+            }else if(data instanceof Array || !(data instanceof Object) || !(olddata instanceof Object)){
+                newdata = [olddata, data];
+            }else if(data instanceof Object && olddata instanceof Object){
+                newdata = $.extend(olddata, data);
+            }
+            var dataJSON = JSON.stringify(newdata);
+            localStorage.setItem(key, dataJSON);
+        }
+        else {
+            var dataJSON = JSON.stringify(data);
+            localStorage.setItem(key, dataJSON);
+        }
+    }
+    else {
+        console.log("You don't have storage capabilities. Sorry. Next time improve your browser.");
+    }
+}*/
 
 /* Currently how to hide the text field */
 function cancelList() {
