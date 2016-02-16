@@ -14,6 +14,7 @@ var friends = require('./routes/friends');
 var myprofile = require('./routes/myprofile');
 var settings = require('./routes/settings');
 var inbox = require('./routes/inbox');
+var friendprofile = require('./routes/friendprofile');
 //var add = require('./routes/add');
 // Example route
 // var user = require('./routes/user');
@@ -50,6 +51,7 @@ app.get('/myprofile',myprofile.view);
 app.get('/settings', settings.view);
 app.get('/inbox', inbox.view);
 app.post('/home', home.addTask);
+app.get('/friendprofile/:friend', friendprofile.view);
 //app.get('/add', add.addFriend);
 // Example route
 // app.get('/users', user.list);

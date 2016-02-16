@@ -71,5 +71,80 @@
             "status": 1
 
 	    }
-	]
+	],
+    "friend_tasks": {
+        "tonylydoesntlie" : {
+            "name" : "tonylydoesntlie",
+            "points" : "1000",
+            "wins" : "2",
+            "losses" : "1",
+            "ties" : "1",
+            "tasks" :[
+                {
+                    "id": 1,
+                    "name": "cse170 a6",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                },
+                {
+                    "id": 1,
+                    "name": "cse170 a7",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                },
+                {
+                    "id": 1,
+                    "name": "cse170 a8",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                },
+                {
+                    "id": 1,
+                    "name": "cse170 a9",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                },
+                {
+                    "id": 1,
+                    "name": "cse170 a10",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                }
+            ]
+                       
+        },
+        "johndoe858" : {
+            "name" : "johndoe858",
+            "points" : "1100",
+            "wins" : "3",
+            "losses" : "0",
+            "ties" : "2",
+            "tasks" : [
+                {
+                    "id": 1,
+                    "name": "cse170 a6",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                }
+            ]
+                       
+        },
+        "janedoe123": {
+            "name" : "janedoe123",
+            "points" : "2034",
+            "wins" : "8",
+            "losses" : "1",
+            "ties" : "0",
+            "tasks" : [
+                {
+                    "id": 1,
+                    "name": "cse170 a6",
+                    "date": "02/19/2016",
+                    "time": "10:00pm"
+                }
+            ]
+                       
+        }
+        
+    }
 }
