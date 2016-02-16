@@ -49,6 +49,7 @@ app.get('/friends', friends.view);
 app.get('/myprofile',myprofile.view);
 app.get('/settings', settings.view);
 app.get('/inbox', inbox.view);
+app.post('/home', home.addTask);
 //app.get('/add', add.addFriend);
 // Example route
 // app.get('/users', user.list);

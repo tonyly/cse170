@@ -9,4 +9,9 @@ exports.view = function(req, res){
 
 exports.showHome = function(req, res) {
 	res.render('home');
-}
+};
+
+exports.addTask = function (req, res) {
+	var postData = req.body;
+	data.tasks.push(postData);
+};
