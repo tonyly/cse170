@@ -26,7 +26,6 @@ function initializePage() {
 	$('#taskEnter').click(addList);
     $('#taskCancel').click(cancelAdd);
 
-    $('#editEnter').click(merp);
     $('#editCancel').click(cancelEdit);
 
     $('#delete').click(deleteTask);
@@ -54,7 +53,7 @@ function addList(e) {
 
     if (deadline) {
         if (name.length > 0 && date.length > 0 && time.length > 0) {
-            $('#taskList').append('<a data-toggle="modal" data-target="#editModal" id="taskObj" onclick="openEdit(this)" href="#">' +
+            $('#taskList').append('<a data-toggle="modal" data-target="#editModal' + task + '" id="taskObj" onclick="openEdit(this)" href="#">' +
                 '<li class="list-group-item" id="' + taskID +'">' +
                 '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
                 '<p>Deadline: ' + date + ', ' + time + '</p></li>' +
@@ -84,7 +83,7 @@ function addList(e) {
             alert("You are missing a task name.");
         }
         else {
-            $('#taskList').append('<a data-toggle="modal" data-target="#editModal" id="taskObj" onclick="openEdit(this)" href="#">' +
+            $('#taskList').append('<a data-toggle="modal" data-target="#editModal' + task + '" id="taskObj" onclick="openEdit(this)" href="#">' +
                 '<li class="list-group-item" id="' + taskID + '">' +
                 '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
                 '<p>Deadline: None</p></li>' +
