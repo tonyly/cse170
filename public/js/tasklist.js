@@ -38,6 +38,8 @@ function initializePage() {
 
     $('#editEnter').click(editTask);
     $('#editCancel').click(cancelEdit);
+
+    $('#delete').click(deleteTask);
 }
 
 
@@ -47,45 +49,21 @@ function addList(e) {
     var name = $("#taskName").val();
     var date = $("#taskDate").val();
     var time = $("#taskTime").val();
-    var timeArray = time.split(/[\s,:]+/);
-    var dateArray = date.split("/");
 
-    var now = new Date();
 
     //  We need the length to assign an id
     var task = $("#taskList li").length;
     task = task + 1;
     var taskID = "task" + task;
 
-
-    // SAME DAY DEADLINE CHECK; Save for another time to work on
-    /*if (parseInt(dateArray[0]) === (now.getMonth() + 1) && parseInt(dateArray[1]) === now.getDate()) {
-        console.log("THIS WILL BE THE DAY WE WAITED FOR.");
-        if (timeArray[2] === "PM") {
-            console.log("THIS WILL BE THE DAY WE OPEN UP THE DOOR.");
-        }
-        else {
-            // check for 12:00 AM
-            if (parseInt(timeArray[0]) === 12) {
-                // Past midnight
-                if (now.getHours() > 0 || (now.getMinutes() > parseInt(timeArray[1]))) {
-                    alert("Hey, this time has already passed!");
-                }
-                else {
-                    console.log("VALID TIME AWAY!  But maybe we should check for alert intervals... sigh.");
-                }
-            }
-            else {
-                if (now.getHours() > parseInt(timeArray[0]) || )
-            }
-        }
-    } */
-
-
     var deadline = $("#taskDeadlineCheck").prop('checked');
 
     var fields = ["• Task Name", "• Deadline Date", "• Deadline Time"];
     var warn = "You are missing the following field(s):";
+
+    var data = {"id": task, "name": name, "date": date, "time": time};
+    data.type="post";
+    $.post('/home', data, function(res) {});
 
 
     if (deadline) {
@@ -191,15 +169,16 @@ function editTask(e) {
 
     var deadline = $("#editDeadlineCheck").prop('checked');
 
-    var wewt = task.find('.list-group-item p');
-    console.log(wewt);
+    var taskBody = task.find("p");
+    var newDate = $('#editDate').val();
+    var newTime = $('#editTime').val();
 
 
     if (deadline) {
-
+        taskBody.text("Deadline: " + newDate + ", " + newTime);
     }
     else {
-
+        taskBody.text("Deadline: None");
     }
 
     $('#editModal').find('#edit').removeClass(taskID);
@@ -210,16 +189,14 @@ function deleteTask(e) {
     e.preventDefault();
     var obj = $(this);
 
-    $('#editModal').on('show.bs.modal', function (e) {
-        var $invoker = $(e.relatedTarget);
-    });
+    var taskID = $('#editModal').find('#edit').attr('class');
+    var task = $('#' + taskID);
 
     var data = {type: "delete"};
-    data.id = 0;
+    data.id = taskID.substr("task".length) - 1;
+    console.log(taskID.substr("task".length));
 
-    $.post('/home', data, function (res) {
-
-    });
+    $.post('/home', data, function (res) {});
 
     console.log(obj);
 }
@@ -244,13 +221,14 @@ function doneTask(e) {
 
 
 function cancelEdit(e) {
+    var taskID = $('#editModal').find('#edit').attr('class');
+    $('#editModal').find('#edit').removeClass(taskID);
     $("#editModal").modal('hide');
     $("#editName").val('');
     $("#editDate").val('');
     $("#editTime").val('');
     $("#editDeadlineCheck").prop("checked", false);
     $('#editDeadlineFields').hide();
-
 }
 
 /* */

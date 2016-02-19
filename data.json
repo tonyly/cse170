@@ -14,19 +14,19 @@
 			"id": 1,
 			"name": "cse170 a6",
 			"date": "02/19/2016",
-			"time": "10:00pm"			
+			"time": "10:00 PM"
 		},
 		{
             "id": 2,
 			"name": "cse120 pa3",
 			"date": "02/22/2016",
-			"time": "09:00pm"			
+			"time": "09:00 PM"
 		},
 		{
             "id": 3,
 			"name": "cse132a jdbc",
 			"date": "02/23/2016",
-			"time": "07:00pm"			
+			"time": "07:00 PM"
 		}
 	],
 
