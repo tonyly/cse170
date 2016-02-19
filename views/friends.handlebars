@@ -17,6 +17,7 @@
   <div class="container">
       <div align="center">
       <h1>Friends</h1>
+      <h3>Go to your friend's profile to challenge them</h3>
     </div>
       <div class="row" align="center">
         <div class="col-lg-6">
@@ -31,7 +32,6 @@
       <div class="list-frame">
         {{#each friends}}
             <a href="/friendprofile/{{name}}"><li class="list-group-item">{{name}}</a>
-            <button type="button" style="float: right;" onclick="alert('Challenge Sent!')">Challenge!</button>  
             <button type="button" style="float: right;" onclick="alert('Delete Friend!')">Delete Friend</button>  
             </li>
         {{/each}}

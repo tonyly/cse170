@@ -45,7 +45,7 @@
         <h5>Ties: {{ties}}</h5>
       </div>
       <hr/> 
-
+      <h2>Challenge your friend to some of their tasks below!</h2>
       <div class="list-frame">
       <ul class="list-group" id="tasklist">
 
@@ -53,7 +53,7 @@
         <a href="#">
           <li class="list-group-item" id="{{id}}">
             <h4 class="list-group-item-heading">
-              <i class="glyphicon glyphicon-edit"></i> {{name}}
+              <input type="checkbox"/> {{name}}
             </h4>
             <p>Deadline: {{date}}, {{time}}</p>
           </li>
@@ -61,6 +61,15 @@
         {{/each}}
       </ul>
     </div>
+    <div align = "center">
+    <a href='/home'><button type="button" class="btn-btn-primary" onclick="alert('Challenge Sent! Waiting on reply from friend.')">Send Challenge</button></a>
+  </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
     </div>
 

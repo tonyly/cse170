@@ -29,6 +29,7 @@ function initializePage() {
     $('#editCancel').click(cancelEdit);
 
     $('#delete').click(deleteTask);
+    $('#done').click(doneTask);
 
 
 
@@ -176,6 +177,24 @@ function deleteTask(e) {
     });
 
     var data = {type: "delete"};
+    data.id = 0;
+
+    $.post('/home', data, function (res) {
+
+    });
+
+    console.log(obj);
+}
+
+function doneTask(e) {
+    e.preventDefault();
+    var obj = $(this);
+
+    $('#editModal').on('show.bs.modal', function (e) {
+        var $invoker = $(e.relatedTarget);
+    });
+
+    var data = {type: "done"};
     data.id = 0;
 
     $.post('/home', data, function (res) {

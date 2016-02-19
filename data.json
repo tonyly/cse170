@@ -2,10 +2,10 @@
         {
             "username": "meep",
             "avatarURL": "../img/mpp-250.png",
-            "points": "11270",
-            "wins": "10",
-            "losses": "10",
-            "ties": "20"
+            "points": 11270,
+            "wins": 10,
+            "losses": 10,
+            "ties": 20
         }
     ],
 

@@ -22,5 +22,6 @@ exports.addTask = function (req, res) {
 			data.tasks.splice(Number(postData.id), 1);
 			console.log(data.tasks);
 		}
-	}
+
+    }
 };

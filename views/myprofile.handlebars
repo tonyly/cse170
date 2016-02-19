@@ -34,18 +34,22 @@
     <!-- BODY CODE -->
     <div class="container">
       <div class="own-profile">
+        {{#each user}}
         <div align="center">
-          <img src="img/mpp-250.png" width="125" /> <br/>
+          <img src="{{avatarURL}}" width="125" /> <br/>
           <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
           <a href="/inbox"><span class="glyphicon glyphicon-envelope"></span></a>
           <hr/>
-          <h3>Username</h3>
-          <h4>Points: 11270</h4>
+          
+          <h3>{{username}}</h3>
+          <h4>Points: {{points}}</h4>
         </div>
-        <h5>Wins: 10</h5>
-        <h5>Losses: 10</h5>
-        <h5>Ties: 20</h5>
+        <h5>Wins: {{wins}}</h5>
+        <h5>Losses: {{losses}}</h5>
+        <h5>Ties: {{ties}}</h5>
       </div>
+
+      {{/each}}
       <hr />
       <div class="closet">
         <div align="center">
