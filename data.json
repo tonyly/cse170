@@ -1,4 +1,14 @@
-{
+{   "user": [
+        {
+            "username": "meep",
+            "avatarURL": "../img/mpp-250.png",
+            "points": "11270",
+            "wins": "10",
+            "losses": "10",
+            "ties": "20"
+        }
+    ],
+
 	"tasks": [
 		{
 			"id": 1,
@@ -72,9 +82,11 @@
 
 	    }
 	],
+    
     "friend_tasks": {
         "tonylydoesntlie" : {
             "name" : "tonylydoesntlie",
+            "avatarURL" : "../img/placeholders/p02.png",
             "points" : "1000",
             "wins" : "2",
             "losses" : "1",
@@ -115,6 +127,7 @@
         },
         "johndoe858" : {
             "name" : "johndoe858",
+            "avatarURL" : "../img/placeholders/p07.png",
             "points" : "1100",
             "wins" : "3",
             "losses" : "0",
@@ -131,6 +144,7 @@
         },
         "janedoe123": {
             "name" : "janedoe123",
+            "avatarURL" : "../img/placeholders/p03.png",
             "points" : "2034",
             "wins" : "8",
             "losses" : "1",
@@ -146,5 +160,64 @@
                        
         }
         
-    }
+    },
+
+    "potatoskins": [
+      {
+        "id": 1,
+        "name": "Master Potato Peeler",
+        "status": "unlocked",
+        "cost": 1000,
+        "blurb": "Wielding the potato peeler of evil's bane, this Spud of Time-- wait, is that a pot?!",
+        "URL": "img/mpp-250.png"
+      },
+      {
+        "id": 2,
+        "name": "Placeholder_2",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna give you up.",
+        "URL": "img/placeholders/p02.png"
+      },
+      {
+        "id": 3,
+        "name": "Placeholder_3",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna let you down.",
+        "URL": "img/placeholders/p03.png"
+      },
+      {
+        "id": 4,
+        "name": "Placeholder_4",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna run around and desert you.",
+        "URL": "img/placeholders/p04.png"
+      },
+      {
+        "id": 5,
+        "name": "Placeholder_5",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna make you cry.",
+        "URL": "img/placeholders/p05.png"
+      },
+      {
+        "id": 6,
+        "name": "Placeholder_6",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna say good-bye.",
+        "URL": "img/placeholders/p06.png"
+      },
+      {
+        "id": 7,
+        "name": "Placeholder_7",
+        "status": "locked",
+        "cost": 1000,
+        "blurb": "Never gonna tell a lie and hurt you.",
+        "URL": "img/placeholders/p07.png"
+      }
+    ]
 }
