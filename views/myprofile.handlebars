@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <title>My Profile</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,74 +11,104 @@
     <!-- use different css for profile, just to keep things separate, but later -->
     <link href="css/myprofile.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/bootstrapMobile.css">
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- NAGIVATION: FOOTER -->
-    <div id="footer">
-      <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
+<!-- NAGIVATION: FOOTER -->
+<div id="footer">
+    <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
         <div class="row" id="bottomNav">
-          <div class="col-xs-3 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
-          <div class="col-xs-3 text-center"><a href="/friends"><i class="glyphicon
+            <div class="col-xs-3 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
+            <div class="col-xs-3 text-center"><a href="/friends"><i class="glyphicon
           glyphicon-th-list"></i><br>Friends</a></div>
-          <div class="col-xs-3 text-center"><a href="/myprofile"><i class="glyphicon
+            <div class="col-xs-3 text-center"><a href="/myprofile"><i class="glyphicon
           glyphicon-user"></i><br>Profile</a></div>
-          <div class="col-xs-3 text-center"><a href="/inbox"><i class="glyphicon
+            <div class="col-xs-3 text-center"><a href="/inbox"><i class="glyphicon
           glyphicon-envelope"></i><br>Inbox</a></div>
         </div>
-      </div>
     </div>
-    <!-- END NAVIGATION: HEADER -->
+</div>
+<!-- END NAVIGATION: HEADER -->
 
-    <!-- BODY CODE -->
-    <div class="container">
-      <div class="own-profile">
-        {{#each user}}
+<!-- BODY CODE -->
+<div class="container">
+<div class="own-profile">
+    {{#each user}}
         <div align="center">
-          <img src="{{avatarURL}}" width="125" /> <br/>
-          <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
-          <a href="/inbox"><span class="glyphicon glyphicon-envelope"></span></a>
-          <hr/>
-          
-          <h3>{{username}}</h3>
-          <h4>Points: {{points}}</h4>
+            <img id="avatar" src="img/mpp-250.png" width="125" />
+            <br/>
+            <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
+            <hr/>
+            <h3>{{username}}</h3>
+            <h4>Points: {{points}}</h4>
         </div>
         <h5>Wins: {{wins}}</h5>
         <h5>Losses: {{losses}}</h5>
         <h5>Ties: {{ties}}</h5>
-      </div>
-
-      {{/each}}
-      <hr />
-      <div class="closet">
+    </div>
+    {{/each}}
+    <hr />
+    <div class="closet">
         <div align="center">
-          <h3>Potato Skins</h3>
-          <h5>Collect points to unlock new skins for your potato companion!</h5>
+            <h3>Potato Skins</h3>
+            <h5>Collect points to unlock new skins for your potato companion!</h5>
 
-          <div class="potatoskins">
-            <img src="img/mpp-250.png" /> <img src="img/placeholders/p02.png"/> <img src="img/placeholders/p03.png"/>
-            <img src="img/placeholders/p04.png"/> <img src="img/placeholders/p05.png"/>
-            <img src="img/placeholders/p06.png"/> <img src="img/placeholders/p07.png"/>
-          </div>
+            <div class="potatoskins" data-toggle="modal" data-backdrop="static" data-target="#skinModal">
+                {{#each potatoskins}}
+                    <a title="{{blurb}}" onmousedown="showDetails(this)">
+                        <img class="{{status}}" id="skin{{id}}" src="{{URL}}" alt="{{name}}/{{cost}}"/>
+                    </a>
+                {{/each}}
+            </div>
         </div>
 
-      </div>
     </div>
+</div>
 
-    <!-- END BODY CODE -->
 
-  </body>
-  <!-- Make a different javascript file for this in the future -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="js/tasklist.js"></script>
-  
-    <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- MODAL TO VIEW AND CHANGE SKINS -->
+<div id="skinModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- MODAL body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <br />
+                <div align="center">
+                    <img id="avatarImg" src=""/>
+                    <h4 id="avatarName">NAME</h4>
+                    <hr />
+                    <p id="avatarDescription">Description.</p>
+                    <h6 id="avatarCost">Worth.</h6>
+                </div>
 
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="skinEnter">Use</button>
+                <button type="button" class="btn btn-primary" id="skinBuy">Buy this skin</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="skinCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- END BODY CODE -->
+
+</body>
+
+
+<!-- Make a different javascript file for this in the future -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/myprofile.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+       integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>
