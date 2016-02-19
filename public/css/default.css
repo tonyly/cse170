@@ -27,7 +27,7 @@ hr.line {
 
 .tab-content{
 	position: relative;
-	height: 70%;
+	height: 60%;
 }
 
 .tab-pane {
@@ -48,7 +48,7 @@ hr.line {
 	max-width: 400px;
 }
 
-#taskDate, #taskTime{
+#taskDate, #taskTime, #editDate, #editTime{
 	z-index: 1500 !important;
 }
 
@@ -59,25 +59,5 @@ hr.line {
  */
 #companion {
     position: relative;
-}
-
-.glyphicon.glyphicon-cog {
-	font-size: 20px;
-}
-
-.glyphicon.glyphicon-envelope {
-	font-size: 20px;
-}
-
-.potatoskins img {
-	max-width: 75px;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-
-.potatoskins img:hover {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
+	float:right;
 }

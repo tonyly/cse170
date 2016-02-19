@@ -18,50 +18,79 @@ function initializePage() {
         todayHighlight: true,
         minDate: 0
     });
+    $('#editDate').datepicker({
+        todayHighlight: true,
+        minDate: 0
+    });
+    $('#taskTime').timepicker({
+        minuteStep: 5
+    });
+    $('#editTime').timepicker({
+        minuteStep: 5
+    });
 
 
-	// Add any additional listeners here
-	// example: $("#div-id").click(functionToCall);
-	
-	$('#taskEnter').click(addList);
+    // Add any additional listeners here
+    // example: $("#div-id").click(functionToCall);
+    
+    $('#taskEnter').click(addList);
     $('#taskCancel').click(cancelAdd);
 
+    $('#editEnter').click(editTask);
     $('#editCancel').click(cancelEdit);
-
-    $('#delete').click(deleteTask);
-    $('#done').click(doneTask);
-
-
-
 }
 
 
 function addList(e) {
     e.preventDefault();
 
-	var name = $("#taskName").val();
-	var date = $("#taskDate").val();
-	var time = $("#taskTime").val();
-	//  We need the length to assign an id
-	var task = $("#taskList li").length;
+    var name = $("#taskName").val();
+    var date = $("#taskDate").val();
+    var time = $("#taskTime").val();
+    var timeArray = time.split(/[\s,:]+/);
+    var dateArray = date.split("/");
+
+    var now = new Date();
+
+    //  We need the length to assign an id
+    var task = $("#taskList li").length;
     task = task + 1;
     var taskID = "task" + task;
+
+
+    // SAME DAY DEADLINE CHECK; Save for another time to work on
+    /*if (parseInt(dateArray[0]) === (now.getMonth() + 1) && parseInt(dateArray[1]) === now.getDate()) {
+        console.log("THIS WILL BE THE DAY WE WAITED FOR.");
+        if (timeArray[2] === "PM") {
+            console.log("THIS WILL BE THE DAY WE OPEN UP THE DOOR.");
+        }
+        else {
+            // check for 12:00 AM
+            if (parseInt(timeArray[0]) === 12) {
+                // Past midnight
+                if (now.getHours() > 0 || (now.getMinutes() > parseInt(timeArray[1]))) {
+                    alert("Hey, this time has already passed!");
+                }
+                else {
+                    console.log("VALID TIME AWAY!  But maybe we should check for alert intervals... sigh.");
+                }
+            }
+            else {
+                if (now.getHours() > parseInt(timeArray[0]) || )
+            }
+        }
+    } */
+
 
     var deadline = $("#taskDeadlineCheck").prop('checked');
 
     var fields = ["• Task Name", "• Deadline Date", "• Deadline Time"];
     var warn = "You are missing the following field(s):";
 
-    //for persistent data
-    var data = {"id": 4,"name": name,"date": date,"time": time};
-    data.type ="post";
-    $.post('/home', data, function (res) {
-
-    });
 
     if (deadline) {
         if (name.length > 0 && date.length > 0 && time.length > 0) {
-            $('#taskList').append('<a data-toggle="modal" data-target="#editModal' + task + '" id="taskObj" onclick="openEdit(this)" href="#">' +
+            $('#taskList').append('<a id="taskObj" onclick="openEdit(this)" href="#">' +
                 '<li class="list-group-item" id="' + taskID +'">' +
                 '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
                 '<p>Deadline: ' + date + ', ' + time + '</p></li>' +
@@ -91,7 +120,7 @@ function addList(e) {
             alert("You are missing a task name.");
         }
         else {
-            $('#taskList').append('<a data-toggle="modal" data-target="#editModal' + task + '" id="taskObj" onclick="openEdit(this)" href="#">' +
+            $('#taskList').append('<a id="taskObj" onclick="openEdit(this)" href="#">' +
                 '<li class="list-group-item" id="' + taskID + '">' +
                 '<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-edit"></i> ' + name + '</h4>' +
                 '<p>Deadline: None</p></li>' +
@@ -106,6 +135,7 @@ function addList(e) {
     }
 }
 
+
 function cancelAdd(e) {
     $("#taskModal").modal('hide');
     $("#taskName").val('');
@@ -115,9 +145,11 @@ function cancelAdd(e) {
     $('#taskDeadlineFields').hide();
 }
 
+
 function openEdit(obj) {
     var task = $(obj);
 
+    var taskID = task.find(".list-group-item");
     var taskHead = task.find(".list-group-item-heading");
     var taskName = taskHead.text().substr(1);
     $("#editTask").val(taskName);
@@ -140,32 +172,38 @@ function openEdit(obj) {
         $("#editDate").val(taskDateTime[0]);
         $("#editTime").val(taskDateTime[1]);
     }
-    return;
+
+    var taskHolder = $('#editModal').find('#edit');
+    taskHolder.addClass(taskID.attr('id'));
 }
 
-function editTask(objID) {
-    var obj = $("#"+objID.data);
 
-    var taskHead = obj.find(".list-group-item-heading");
+function editTask(e) {
+    e.preventDefault();
 
+    var taskID = $('#editModal').find('#edit').attr('class');
+    var task = $('#' + taskID);
+    var taskTitle = task.find('.list-group-item-heading');
 
-    var name = $("#editTask").val();
-    var date = $("#editDate").val();
-    var time = $("#editTime").val();
+    var newTitle = $('#editTask').val();
+
+    taskTitle.html('<i class="glyphicon glyphicon-edit"></i> ' + newTitle);
+
     var deadline = $("#editDeadlineCheck").prop('checked');
 
-    console.log(taskHead);
+    var wewt = task.find('.list-group-item p');
+    console.log(wewt);
+
+
     if (deadline) {
 
     }
     else {
-        if(name.length <= 0) {
-            alert("You are missing a task name.");
-        }
-        else {
-            console.log(taskHead.html());
-        }
+
     }
+
+    $('#editModal').find('#edit').removeClass(taskID);
+    $('#editModal').modal('hide');
 }
 
 function deleteTask(e) {
