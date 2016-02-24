@@ -40,6 +40,7 @@ function initializePage() {
     $('#editCancel').click(cancelEdit);
 
     $('#delete').click(deleteTask);
+    $('#done').click(doneTask);
 }
 
 
@@ -193,9 +194,18 @@ function deleteTask(e) {
     var task = $('#' + taskID);
 
     var data = {type: "delete"};
-    data.id = taskID.substr("task".length) - 1;
-    console.log(taskID.substr("task".length));
 
+    // taskID
+    data.id = taskID.substr("task".length);
+
+    //add new
+    var taskHead = task.find(".list-group-item-heading");
+    var taskName = taskHead.text().substr(1);
+    console.log("taskName: " + taskName);
+    // end new
+
+    console.log(taskID.substr("task".length));
+    data.taskName = taskHead.text().substr(1);
     $.post('/home', data, function (res) {});
 
     console.log(obj);
@@ -205,16 +215,23 @@ function doneTask(e) {
     e.preventDefault();
     var obj = $(this);
 
-    $('#editModal').on('show.bs.modal', function (e) {
-        var $invoker = $(e.relatedTarget);
-    });
+    var taskID = $('#editModal').find('#edit').attr('class');
+    var task = $('#' + taskID);
 
     var data = {type: "done"};
-    data.id = 0;
 
-    $.post('/home', data, function (res) {
+    // taskID
+    data.id = taskID.substr("task".length);
 
-    });
+    //add new
+    var taskHead = task.find(".list-group-item-heading");
+    var taskName = taskHead.text().substr(1);
+    console.log("taskName: " + taskName);
+    // end new
+
+    console.log(taskID.substr("task".length));
+    data.taskName = taskHead.text().substr(1);
+    $.post('/home', data, function (res) {});
 
     console.log(obj);
 }

@@ -17,14 +17,37 @@ exports.addTask = function (req, res) {
 	var type = postData.type;
 	if (type === "post") {
 		data.tasks.push(postData);
-	} else if (type === "delete") {
+	} 
+	else if (type === "delete") {
 		if (postData.id != undefined) {
-		console.log('deleting');
-            //data.tasks.removeValue('id', postData.id);
-            data.tasks.splice(Number(postData.id), 1);
-			console.log(data.tasks);
+			var str = postData.taskName;
+			var id = postData.id;
+			var i;
+
+			for (i = 0; i < data.tasks.length; i++) {
+				if (data.tasks[i].id == id) {
+					data.tasks.splice(i, 1);
+					
+				}
+			}
 		}
 
+    }
+    else if (type == "done"){
+    	if (postData.id != undefined) {
+			var str = postData.taskName;
+			var id = postData.id;
+			var i;
+
+			for (i = 0; i < data.tasks.length; i++) {
+				console.log(id + " " + data.tasks[i].id);
+				if (data.tasks[i].id == id) {
+					data.tasks.splice(i, 1);
+					var point = data.user[0].points;
+					data.user[0].points = point + 10; 
+				}
+			}
+		}
     }
 };
 
