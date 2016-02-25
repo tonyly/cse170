@@ -38,6 +38,7 @@ hr.line {
 }
 
 .locked {
+	content: url("../img/placeholders/locked.png");
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	-webkit-transition: .3s ease-in-out;

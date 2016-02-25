@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/placeholders/locked.png"/>
 
     <!-- CSS -->
     <!-- use different css for profile, just to keep things separate, but later -->
@@ -36,16 +37,18 @@
 <div class="own-profile">
     {{#each user}}
         <div align="center">
-            <img id="avatar" src="img/mpp-250.png" width="125" />
+            <img id="avatar" src={{avatarURL}} width="125" />
             <br/>
             <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
             <hr/>
-            <h3>{{username}}</h3>
-            <h4>Points: {{points}}</h4>
+            <h3 id="userName">{{username}}</h3>
+            <h4 id="userPoints">Points: {{points}}</h4>
         </div>
-        <h5>Wins: {{wins}}</h5>
-        <h5>Losses: {{losses}}</h5>
-        <h5>Ties: {{ties}}</h5>
+        <div id="userTrack">
+          <h5 id="userWin">Wins: {{wins}}</h5>
+          <h5 id="userLose">Losses: {{losses}}</h5>
+          <h5 id="userTie">Ties: {{ties}}</h5>
+        </div>
     </div>
     {{/each}}
     <hr />
