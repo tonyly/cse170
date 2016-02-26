@@ -13,6 +13,7 @@ function initializePage() {
 
     $('#taskDeadlineFields').hide();
     $('#editDeadlineFields').hide();
+    $('#pointIncrease').hide();
 
 
     $('#taskDate').datepicker({
@@ -253,8 +254,6 @@ function editTask(e) {
 /*
  * Function to DELETE the task; using the injected taskID, the modal locates the task that
  * launched it to remove
- *
- * TODO: Find some way to get it to remove from the json because that isn't working
  */
 function deleteTask(e) {
     e.preventDefault();
@@ -279,12 +278,13 @@ function deleteTask(e) {
       data.taskName = taskHead.text().substr(1);
       $.post('/home', data, function (res) {});
 
-      $("#editModal").modal('hide');
+      $('#editModal').modal('hide');
     }
 
     task.hide();
     $('#editModal').find('#edit').removeClass(taskID);
     $('#editModal').modal('hide');
+    window.location.reload();
 }
 
 
@@ -292,9 +292,6 @@ function deleteTask(e) {
  * Function to FINISH the task; using the injected taskID, the modal locates the task that
  * launched it to remove it from the list and to increment the user's points by the appropriate
  * amount of points.
- *
- * TODO: Still have yet to increment points or figured out how to remove a task from json or to
- *       edit the JSON information
  */
 function doneTask(e) {
     e.preventDefault();
@@ -318,12 +315,14 @@ function doneTask(e) {
     $.post('/home', data, function (res) {});
 
     task.hide();
-    $("#editModal").modal('hide');
-    $("#editName").val('');
-    $("#editDate").val('');
-    $("#editTime").val('');
-    $("#editDeadlineCheck").prop("checked", false);
+    $('#editModal').modal('hide');
+    $('#editName').val('');
+    $('#editDate').val('');
+    $('#editTime').val('');
+    $('#editDeadlineCheck').prop("checked", false);
     $('#editDeadlineFields').hide();
+    $('#pointIncrease').fadeIn().delay(1500).fadeOut();
+    window.setTimeout(function(){location.reload()},2500)
 }
 
 
@@ -333,11 +332,11 @@ function doneTask(e) {
 function cancelEdit(e) {
     var taskID = $('#editModal').find('#edit').attr('class');
     $('#editModal').find('#edit').removeClass(taskID);
-    $("#editModal").modal('hide');
-    $("#editName").val('');
-    $("#editDate").val('');
-    $("#editTime").val('');
-    $("#editDeadlineCheck").prop("checked", false);
+    $('#editModal').modal('hide');
+    $('#editName').val('');
+    $('#editDate').val('');
+    $('#editTime').val('');
+    $('#editDeadlineCheck').prop("checked", false);
     $('#editDeadlineFields').hide();
 }
 
