@@ -1,6 +1,6 @@
 html, body {
 	padding: 10px 10px 5px 5px;
-    background: url("../img/bg-lake.png") no-repeat fixed center;
+    background: url("../img/bg-field.png") no-repeat fixed center;
     background-size: cover;
     height: 100%;
 }
@@ -16,11 +16,6 @@ hr.line {
 	overflow: scroll;
 }
 
-/*
- * Potato Friend found here
- * TODO: Figure out how to position the potato friend
- *
- */
 #companion {
     position: relative;
 }
@@ -38,7 +33,6 @@ hr.line {
 }
 
 .locked {
-	content: url("../img/placeholders/locked.png");
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	-webkit-transition: .3s ease-in-out;
