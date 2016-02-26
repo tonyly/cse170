@@ -34,7 +34,7 @@ function initializePage() {
 
     // Add any additional listeners here
     // example: $("#div-id").click(functionToCall);
-    
+
     $('#taskEnter').click(addList);
     $('#taskCancel').click(cancelAdd);
 
@@ -298,10 +298,12 @@ function deleteTask(e) {
  */
 function doneTask(e) {
     e.preventDefault();
-    var obj = $(this);
 
     var taskID = $('#editModal').find('#edit').attr('class');
     var task = $('#' + taskID);
+    var points = Number($('#pointContainer').text().substr("    POINTS: ".length));
+    points = points + 10;
+    $('#pointContainer').html('&nbsp;&nbsp;&nbsp;&nbsp;POINTS: ' + points);
 
     var data = {type: "done"};
 
@@ -310,11 +312,8 @@ function doneTask(e) {
 
     //add new
     var taskHead = task.find(".list-group-item-heading");
-    var taskName = taskHead.text().substr(1);
-    console.log("taskName: " + taskName);
     // end new
 
-    console.log(taskID.substr("task".length));
     data.taskName = taskHead.text().substr(1);
     $.post('/home', data, function (res) {});
 
