@@ -10,6 +10,7 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var home = require('./routes/home');
+var home2 = require('./routes/home2');
 var friends = require('./routes/friends');
 var myprofile = require('./routes/myprofile');
 var settings = require('./routes/settings');
@@ -47,6 +48,8 @@ app.get('/', index.view);
 //app.get('/home', home.showHome);
 app.get('/home', home.view);
 app.post('/home', home.addTask);
+app.get('/home2', home2.view);
+app.post('/home2', home2.addTask);
 app.get('/friends', friends.view);
 app.get('/myprofile', myprofile.view);
 app.post('/myprofile', myprofile.changeSkin);
