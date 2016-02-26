@@ -1,5 +1,5 @@
 html, body {
-    background: url("../img/bg-lake.png") no-repeat fixed center;
+    background: url("../img/bg-field.png") no-repeat fixed center;
     background-size: cover;
     height: 100%;
 }
@@ -53,11 +53,6 @@ hr.line {
 	z-index: 1500 !important;
 }
 
-/*
- * Potato Friend found here
- * TODO: Figure out how to position the potato friend
- *
- */
 #companion {
     position: relative;
 	float:right;
