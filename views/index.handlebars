@@ -8,7 +8,9 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+               integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+               crossorigin="anonymous">-->
         <!--    END CSS   -->
 
 
@@ -17,7 +19,7 @@
    		<meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="shortcut icon" type="image/png" href="img/placeholders/locked.png"/>
 
-		<title>Login</title>
+		<title>TATER TASKS</title>
 		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet'>
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel='stylesheet'>
 		<style>
@@ -41,12 +43,16 @@
 			.input{background:#fff; transition:all 800ms; width:247px; border-radius:3px 0 0 3px; font-family: 'Ropa Sans', sans-serif; border:solid 1px #ccc; border-right:none; outline:none; color:#999; height:40px; line-height:40px; display:inline-block; padding-left:10px; font-size:16px}
 			.input,.login span.icon{vertical-align:top}
 			.login span.icon{width:50px; transition:all 800ms; text-align:center; color:#999; height:40px; border-radius:0 3px 3px 0; background:#e8e8e8; height:40px; line-height:40px; display:inline-block; border:solid 1px #ccc; border-left:none; font-size:16px}
-			.input:focus:invalid{border-color:red}
+            span.icon{width:50px; transition:all 800ms; text-align:center; color:#999; height:40px; border-radius:0
+            3px 3px 0; background:#e8e8e8; height:40px; line-height:40px; display:inline-block; border:solid 1px #ccc; border-left:none; font-size:16px};
+            .input:focus:invalid{border-color:red}
 			.input:focus:invalid+.icon{border-color:red}
 			.input:focus:valid{border-color:green}
 			.input:focus:valid+.icon{border-color:green}
 			#check,#check1{top:1px; position:relative}
-			.btn{border:none; outline:none; background:#0099CC; border-bottom:solid 4px #006699; font-family: 'Ropa Sans', sans-serif; margin:0 auto; display:block; height:40px; width:100%; padding:0 10px; border-radius:3px; font-size:16px; color:#FFF}
+			.btn-custom{border:none; outline:none; background:#0099CC; border-bottom:solid 4px #006699;
+                font-family: 'Ropa Sans', sans-serif; margin:0 auto; display:block; height:40px; width:100%;
+                padding:0 10px; border-radius:3px; font-size:16px; color:#FFF}
 
 			.social-login{padding:15px 20px; background:#f1f1f1; border-top:solid 2px #e8e8e8; text-align:right}
 			.social-login a{display:inline-block; height:35px; text-align:center; line-height:35px; width:35px; margin:0 3px; text-decoration:none; color:#FFFFFF}
@@ -65,7 +71,8 @@
 		</style>
 	</head>
 	<body>
-		<h1 align="center">Login or Sign Up for Motivator!</h1>
+		<h1 align="center">Welcome to Tater Tasks!  Sign up to start making tasks with your potato friend, or log
+            in to continue from your last session!</h1>
 		<div id="login-form">
 
 		<input type="radio" checked id="login" name="switch" class="hide">
@@ -83,11 +90,9 @@
 					<form action="/home">
 						<ul class="ul-list">
 							<li><input type="email" required class="input" placeholder="Your Email"/><span class="icon"><i class="fa fa-user"></i></span></li>
-							<!--<li><input type="text" required class="input" placeholder="Display Name"/><span
-                                class="icon"><i class="fa fa-user"></i></span></li>-->
 							<li><input type="password" required class="input" placeholder="Password"/><span class="icon"><i class="fa fa-lock"></i></span></li>
 							<li><span class="remember"><input type="checkbox" id="check"> <label for="check">Remember Me</label></span><span class="remember"><a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forget Password</a></span></li>
-							<li><input type="submit" value="SIGN IN" class="btn"></li>
+							<li><input type="submit" id="signIn" value="SIGN IN" class="btn-custom"></li>
 						</ul>
 					</form>
 				</div>
@@ -103,7 +108,7 @@
 							<li><input type="text" required class="input" placeholder="Display Name"/><span class="icon"><i class="fa fa-user"></i></span></li>
 							<li><input type="password" required class="input" placeholder="Password"/><span class="icon"><i class="fa fa-lock"></i></span></li>
 							<li><input type="checkbox" id="check1"> <label for="check1">I accept terms and conditions</label></li>
-							<li><input type="submit" value="SIGN UP" class="btn"></li>
+							<li><input type="submit" id="signUp" value="SIGN UP" class="btn-custom"></li>
 						</ul>
 					</form>
 				</div>
@@ -116,32 +121,26 @@
               <!-- MODAL HEADER -->
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Message</h4>
+                <h4 class="modal-title">Forgot Password</h4>
               </div>
               <!-- MODAL BODY: FORM -->
               <div class="modal-body">
+                <p>Enter in your e-mail to retrieve your password!</p>
                 <div role="form">
-                  <!-- TASK NAME -->
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus enim diam, adipiscing sodales
-                      sem ut, tristique suscipit odio. Nam mollis ipsum et venenatis euismod. Aliquam erat volutpat.
-                      Praesent placerat condimentum tristique. Morbi egestas dapibus viverra. Mauris sit amet dignissim
-                      risus, non elementum eros. Donec urna dui, placerat et feugiat non, vulputate in ipsum. Quisque
-                      dignissim pulvinar nisi. Quisque feugiat commodo dolor nec suscipit. Donec pretium scelerisque
-                      aliquet. Vivamus vitae turpis metus. Sed lobortis vitae orci sed gravida. Donec euismod ipsum
-                      sagittis pellentesque pellentesque. Aenean at lorem nec leo consequat tincidunt. Maecenas sit
-                      amet felis vel ante dictum suscipit quis nec magna. Sed augue velit, imperdiet quis mi a, porta
-                      aliquet urna.</p>
-                  </div>
+                  <input type="email" required class="input" id="forgetEmail" placeholder="Your Email"/><span
+                        class="icon"><i
+                        class="fa fa-user"></i></span>
                 </div>
+                </form>
 
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="enter">Enter</button>
+                <button type="button" class="btn btn-primary" id="enter">Retrieve Password</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel">Cancel</button>
               </div>
             </div>
           </div>
-	
+	    </div>
 
      
 

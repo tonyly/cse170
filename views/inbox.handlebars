@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>MOTIVATOR</title>
+    <title>TATER TASKS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,12 @@
       </div>
       <div class="list-frame">
         {{#each messages}}
-          <a data-toggle="modal" data-target="#messageModal" href="#"><li class="list-group-item">{{subject}} {{date}}</li></a>
+          <a data-toggle="modal" data-target="#messageModal" href="#">
+            <li class="list-group-item">{{subject}}
+              <br />
+              <div align="right">{{date}}</div>
+            </li>
+          </a>
         {{/each}}
       </div>
     <div id="footer">
@@ -52,7 +57,9 @@
               <div class="modal-body">
                 <div role="form">
                   <!-- TASK NAME -->
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus enim diam, adipiscing sodales sem ut, tristique suscipit odio. Nam mollis ipsum et venenatis euismod. Aliquam erat volutpat. Praesent placerat condimentum tristique. Morbi egestas dapibus viverra. Mauris sit amet dignissim risus, non elementum eros. Donec urna dui, placerat et feugiat non, vulputate in ipsum. Quisque dignissim pulvinar nisi. Quisque feugiat commodo dolor nec suscipit. Donec pretium scelerisque aliquet. Vivamus vitae turpis metus. Sed lobortis vitae orci sed gravida. Donec euismod ipsum sagittis pellentesque pellentesque. Aenean at lorem nec leo consequat tincidunt. Maecenas sit amet felis vel ante dictum suscipit quis nec magna. Sed augue velit, imperdiet quis mi a, porta aliquet urna.</p>
+                  <p id="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus enim diam,
+                      adipiscing
+                      sodales sem ut, tristique suscipit odio. Nam mollis ipsum et venenatis euismod. Aliquam erat volutpat. Praesent placerat condimentum tristique. Morbi egestas dapibus viverra. Mauris sit amet dignissim risus, non elementum eros. Donec urna dui, placerat et feugiat non, vulputate in ipsum. Quisque dignissim pulvinar nisi. Quisque feugiat commodo dolor nec suscipit. Donec pretium scelerisque aliquet. Vivamus vitae turpis metus. Sed lobortis vitae orci sed gravida. Donec euismod ipsum sagittis pellentesque pellentesque. Aenean at lorem nec leo consequat tincidunt. Maecenas sit amet felis vel ante dictum suscipit quis nec magna. Sed augue velit, imperdiet quis mi a, porta aliquet urna.</p>
                 </div>
               </div>
 
@@ -73,7 +80,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+         integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
