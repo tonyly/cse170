@@ -15,6 +15,7 @@ var myprofile = require('./routes/myprofile');
 var settings = require('./routes/settings');
 var inbox = require('./routes/inbox');
 var friendprofile = require('./routes/friendprofile');
+var challenge = require('./routes/challenge');
 //var add = require('./routes/add');
 // Example route
 // var user = require('./routes/user');
@@ -52,6 +53,7 @@ app.post('/myprofile', myprofile.changeSkin);
 app.get('/settings', settings.view);
 app.get('/inbox', inbox.view);
 app.get('/friendprofile/:friend', friendprofile.view);
+app.get('/challenge/:friend', challenge.view);
 //app.get('/add', add.addFriend);
 // Example route
 // app.get('/users', user.list);

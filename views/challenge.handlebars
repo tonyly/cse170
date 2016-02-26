@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Challenge</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <!-- use different css for profile, just to keep things separate, but later -->
+    <link href="../css/myprofile.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrapMobile.css">
+</head>
+
+<body>
+
+<!-- NAGIVATION: FOOTER -->
+<div id="footer">
+    <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
+        <div class="row" id="bottomNav">
+            <div class="col-xs-3 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
+            <div class="col-xs-3 text-center"><a href="/friends"><i class="glyphicon
+          glyphicon-th-list"></i><br>Friends</a></div>
+            <div class="col-xs-3 text-center"><a href="/myprofile"><i class="glyphicon
+          glyphicon-user"></i><br>Profile</a></div>
+            <div class="col-xs-3 text-center"><a href="/inbox"><i class="glyphicon
+          glyphicon-envelope"></i><br>Inbox</a></div>
+        </div>
+    </div>
+</div>
+<!-- END NAVIGATION: HEADER -->
+
+<!-- BODY CODE -->
+<div class="container">
+    <div class="friendtasks">
+      <h2>{{friendname}}'s Tater Tasks</h2>
+    <div class="list-frame">
+        {{#each friends_tasks.tasks}}
+            <li class="list-group-item">{{name}} {{date}} {{time}}</li>
+        {{/each}}
+      </div>
+    </div>
+    <hr />
+    <div class="mytasks">
+      <h2>My Tater Tasks</h2>
+<div class="list-frame">
+      <ul class="list-group" id="tasklist">
+
+        {{#each my_tasks}}
+          <li class="list-group-item" id="{{id}}">{{name}} {{date}} {{time}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    </div>
+</div>
+
+<!-- END BODY CODE -->
+
+</body>
+
+
+<!-- Make a different javascript file for this in the future -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="../jjjjjjjjs/myprofile.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+       integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+-->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</html>
