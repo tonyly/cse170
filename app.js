@@ -45,12 +45,12 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 //app.get('/home', home.showHome);
 app.get('/home', home.view);
-//app.get('/home', home.showHome);
+app.post('/home', home.addTask);
 app.get('/friends', friends.view);
-app.get('/myprofile',myprofile.view);
+app.get('/myprofile', myprofile.view);
+app.post('/myprofile', myprofile.changeSkin);
 app.get('/settings', settings.view);
 app.get('/inbox', inbox.view);
-app.post('/home', home.addTask);
 app.get('/friendprofile/:friend', friendprofile.view);
 //app.get('/add', add.addFriend);
 // Example route
