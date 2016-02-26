@@ -16,7 +16,8 @@
             "deadline": true,
 			"date": "02/19/2016",
 			"time": "10:00 PM",
-            "created": 1
+            "created": 1,
+            "challenge": 1
 		},
 		{
             "id": 2,
@@ -24,7 +25,8 @@
             "deadline": true,
 			"date": "02/22/2016",
 			"time": "09:00 PM",
-            "created": 1
+            "created": 1,
+            "challenge": 1
 		},
 		{
             "id": 3,
@@ -32,7 +34,8 @@
             "deadline": true,
 			"date": "02/23/2016",
 			"time": "07:00 PM",
-            "created": 1
+            "created": 1,
+            "challenge": 0
 		},
         {
           "id": 4,
@@ -40,7 +43,8 @@
           "deadline": false,
           "date": "",
           "time": "",
-          "created": 1
+          "created": 1,
+          "challenge": 0
         }
 	],
 
@@ -110,31 +114,36 @@
                     "id": 1,
                     "name": "cse170 a6",
                     "date": "02/19/2016",
-                    "time": "10:00 PM"
+                    "time": "10:00 PM",
+                    "challenge": 1
                 },
                 {
                     "id": 1,
                     "name": "cse170 a7",
                     "date": "02/19/2016",
-                    "time": "10:00 PM"
+                    "time": "10:00 PM",
+                    "challenge": 0
                 },
                 {
                     "id": 1,
                     "name": "cse170 a8",
                     "date": "02/19/2016",
-                    "time": "10:00 PM"
+                    "time": "10:00 PM",
+                    "challenge": 0
                 },
                 {
                     "id": 1,
                     "name": "cse170 a9",
                     "date": "02/19/2016",
-                    "time": "10:00 PM"
+                    "time": "10:00 PM",
+                    "challenge": 0
                 },
                 {
                     "id": 1,
                     "name": "cse170 a10",
                     "date": "02/19/2016",
-                    "time": "10:00 PM"
+                    "time": "10:00 PM",
+                    "challenge": 0
                 }
             ]
                        
@@ -151,7 +160,8 @@
                     "id": 1,
                     "name": "cse170 a6",
                     "date": "02/19/2016",
-                    "time": "10:00pm"
+                    "time": "10:00pm",
+                    "challenge": 1
                 }
             ]
                        
@@ -168,7 +178,8 @@
                     "id": 1,
                     "name": "cse170 a6",
                     "date": "02/19/2016",
-                    "time": "10:00pm"
+                    "time": "10:00pm",
+                    "challenge": 1
                 }
             ]
                        
