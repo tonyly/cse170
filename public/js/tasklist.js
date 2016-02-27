@@ -322,7 +322,7 @@ function doneTask(e) {
     $('#editDeadlineCheck').prop("checked", false);
     $('#editDeadlineFields').hide();
     $('#pointIncrease').fadeIn().delay(1500).fadeOut();
-    window.setTimeout(function(){location.reload()},2500)
+    window.setTimeout(function(){location.reload()},2500);
 }
 
 

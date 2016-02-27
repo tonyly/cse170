@@ -81,5 +81,11 @@ hr.line {
 
 	font-weight: bold;
 	color: #E82C0C;
+}
+
+.emptyMessage {
+    position: absolute;
+    font-style: italic;
+    color: #999999;
 
 }
