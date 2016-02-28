@@ -2,6 +2,7 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
+    window.numOfTasks = $("#taskList li").length;
 	initializePage();
 })
 
@@ -15,15 +16,22 @@ function initializePage() {
     $('#editDeadlineFields').hide();
     $('#pointIncrease').hide();
 
-
     $('#taskDate').datepicker({
         todayHighlight: true,
         minDate: 0
     });
+    $('#taskCalendar').click(function() {
+        $('#taskDate').datepicker("show");
+    });
+
     $('#editDate').datepicker({
         todayHighlight: true,
         minDate: 0
     });
+    $('#editCalendar').click(function() {
+        $('#editDate').datepicker("show");
+    });
+
     $('#taskTime').timepicker({
         minuteStep: 5
     });
@@ -61,8 +69,10 @@ function addList(e) {
 
 
     //  We need the length to assign an id
-    var task = $("#taskList li").length;
-    task = task + 1;
+    /*var task = $("#taskList li").length;
+    task = task + 1;*/
+    window.numOfTasks = window.numOfTasks + 1;
+    var task = window.numOfTasks;
     var taskID = "task" + task;
 
     var deadline = $("#taskDeadlineCheck").prop('checked');
@@ -86,15 +96,6 @@ function addList(e) {
     var meridiem = curHour < 12 ? " AM" : " PM";
     var createTime = hh + ":" + min + meridiem;
 
-    var data = {
-        "id": task,
-        "name": name,
-        "deadline": deadline,
-        "date": date,
-        "time": time,
-        "created": createDate + ", " + createTime
-    };
-    data.type= "post";
 
     if (deadline) {
         if (name.length > 0 && date.length > 0 && time.length > 0) {
@@ -110,7 +111,17 @@ function addList(e) {
             $('#taskDeadlineCheck').prop("checked", false);
             $('#taskDeadlineFields').hide();
 
+            var data = {
+                "id": task,
+                "name": name,
+                "deadline": true,
+                "date": date,
+                "time": time,
+                "created": createDate + ", " + createTime
+            };
+            data.type= "post";
             $.post('/home', data, function(res) {});
+            console.log(data);
         }
         else {
             if (name.length <= 0) {
@@ -123,11 +134,13 @@ function addList(e) {
                 warn = warn + "\n" + fields[2];
             }
             alert(warn);
+            window.numOfTasks = window.numOfTasks - 1;
         }
     }
     else {
         if (name.length <= 0) {
             alert("You are missing a task name.");
+            window.numOfTasks = window.numOfTasks - 1;
         }
         else {
             $('#taskList').append('<a id="taskObj" onclick="openEdit(this)" href="#">' +
@@ -142,7 +155,17 @@ function addList(e) {
             $("#taskDeadlineCheck").prop("checked", false);
             $('#taskDeadlineFields').hide();
 
+            var data = {
+                "id": task,
+                "name": name,
+                "deadline": false,
+                "date": date,
+                "time": time,
+                "created": createDate + ", " + createTime
+            };
+            data.type= "post";
             $.post('/home', data, function(res) {});
+            console.log(data);
         }
     }
 }

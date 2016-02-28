@@ -11,7 +11,22 @@ exports.changeSkin = function (req, res) {
 	if (type === "set") {
 		data.user[0].avatarURL = postData.avURL;
 	}
-	else if (type == "buy"){
+	else if (type === "buy"){
+		if (postData.id != undefined) {
+			var id = postData.id;
+			var i;
+
+			for (i = 0; i < data.potatoskins.length; i++) {
+				if (data.potatoskins[i].id == id) {
+					data.potatoskins[i].status = postData.status;
+					data.user[0].points = Number(postData.points);
+					break;
+				}
+			}
+		}
+	}
+	else if (type === "buySet") {
+		data.user[0].avatarURL = postData.avURL;
 		if (postData.id != undefined) {
 			var id = postData.id;
 			var i;

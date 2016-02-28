@@ -1,0 +1,29 @@
+html, body {
+    padding: 10px 10px 5px 5px;
+    background: url("../img/bg-field.png") no-repeat fixed center;
+    background-size: cover;
+    height: 100%;
+
+}
+
+hr.line {
+    margin: 10px;
+}
+
+.container {
+    position: relative;
+    background-color: rgba(255,255,255,0.5);
+    padding: 10px 10px 5px 5px;
+    max-width: 700px;
+    height: 100%;
+}
+
+/* How to not make the textfield ridiculously wide */
+.form-control {
+    width: 50%;
+    max-width: 400px;
+}
+
+#return {
+    font-size: 20px;
+}

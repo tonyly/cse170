@@ -40,14 +40,19 @@
             <img id="avatar" src={{avatarURL}} width="125" />
             <br/>
             <a href="/settings"><span class="glyphicon glyphicon-cog"></span></a>
-            <hr/>
-            <h3 id="userName">{{username}}</h3>
-            <h4 id="userPoints">Points: {{points}}</h4>
         </div>
-        <div id="userTrack">
-          <h5 id="userWin">Wins: {{wins}}</h5>
-          <h5 id="userLose">Losses: {{losses}}</h5>
-          <h5 id="userTie">Ties: {{ties}}</h5>
+            <hr/>
+        <div class="profile">
+            <div align="center">
+              <h3 id="userName">{{username}}</h3>
+              <h4 id="userPoints">Points: {{points}}</h4>
+            </div>
+
+          <div id="userTrack">
+            <h5 id="userWin">Wins: {{wins}}</h5>
+            <h5 id="userLose">Losses: {{losses}}</h5>
+            <h5 id="userTie">Ties: {{ties}}</h5>
+          </div>
         </div>
     </div>
     {{/each}}
@@ -83,13 +88,14 @@
                     <h4 id="avatarName">NAME</h4>
                     <hr />
                     <p id="avatarDescription">Description.</p>
-                    <h6 id="avatarCost">Worth.</h6>
+                    <h5 id="avatarCost">Worth.</h5>
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="skinEnter">Use</button>
-                <button type="button" class="btn btn-primary" id="skinBuy">Buy this skin</button>
+                <button type="button" class="btn btn-primary" id="skinBuy">Buy</button>
+                <button type="button" class="btn btn-success" id="skinBuyEnter">Buy and Use</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="skinCancel">Cancel</button>
             </div>
         </div>

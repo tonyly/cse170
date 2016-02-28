@@ -2,12 +2,32 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
+	data["testing"] = false;
+
+	// re-ID all tasks
+	if (data.tasks.length != 0) {
+		var i;
+		for (i = 0; i < data.tasks.length; i++) {
+			data.tasks[i].id = i + 1;
+		}
+	}
+
 	res.render('home', data);
 };
 
 
-exports.showHome = function(req, res) {
-	res.render('home');
+exports.view2 = function(req, res) {
+	data["testing"] = true;
+
+	// re-ID all tasks
+	if (data.tasks.length != 0) {
+		var i;
+		for (i = 0; i < data.tasks.length; i++) {
+			data.tasks[i].id = i + 1;
+		}
+	}
+
+	res.render('home', data);
 };
 
 exports.addTask = function (req, res) {
@@ -15,8 +35,14 @@ exports.addTask = function (req, res) {
 
 	var type = postData.type;
 	if (type === "post") {
+		if (postData.deadline === 'true') {
+			postData.deadline = true;
+		}
+		else {
+			postData.deadline = false;
+		}
 		data.tasks.push(postData);
-	} 
+	}
 	else if (type === "delete") {
 		if (postData.id != undefined) {
 			var id = postData.id;

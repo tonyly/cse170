@@ -30,10 +30,14 @@
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
       </div><!-- /.row -->
+      <div align="center" class="emptyMessage">
+          <h5>Aw, no friends?  Search for some to add!</h5>
+      </div>
       <div class="list-frame">
         {{#each friends}}
             <a href="/friendprofile/{{name}}"><li class="list-group-item">{{name}}</a>
-            <button type="button" style="float: right;" onclick="alert('Delete Friend!')">Delete Friend</button>  
+            <button type="button" class="btn btn-danger btn-xs" style="float: right;" onclick="deleteFriend(this)">Delete
+                Friend</button>
             </li>
         {{/each}}
       </div>
@@ -62,6 +66,7 @@
 
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="js/friends.js"></script>
     <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 

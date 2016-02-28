@@ -81,6 +81,7 @@ hr.line {
 
 	font-weight: bold;
 	color: #E82C0C;
+	display: none;
 }
 
 .emptyMessage {
