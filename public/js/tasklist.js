@@ -291,23 +291,16 @@ function deleteTask(e) {
       // taskID
       data.id = taskID.substr("task".length);
 
-      //add new
-      var taskHead = task.find(".list-group-item-heading");
-      var taskName = taskHead.text().substr(1);
-      console.log("taskName: " + taskName);
-      // end new
-
-      console.log(taskID.substr("task".length));
-      data.taskName = taskHead.text().substr(1);
       $.post('/home', data, function (res) {});
 
+      task.hide();
       $('#editModal').modal('hide');
+      $('#editModal').find('#edit').removeClass(taskID);
+
+      window.location.reload();
     }
 
-    task.hide();
-    $('#editModal').find('#edit').removeClass(taskID);
-    $('#editModal').modal('hide');
-    window.location.reload();
+
 }
 
 

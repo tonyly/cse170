@@ -15,7 +15,6 @@ exports.removeFriend = function(req, res) {
                 data.friends.splice(i, 1);
                 break;
             }
-
         }
     }
 

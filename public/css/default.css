@@ -90,3 +90,10 @@ hr.line {
     color: #999999;
 
 }
+
+#friendsContainer {
+	position: relative;
+	overflow: scroll;
+	max-width: 400px;
+	height: 40%;
+}

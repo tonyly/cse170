@@ -12,18 +12,18 @@
 	"tasks": [
 		{
 			"id": 1,
-			"name": "cse170 a6",
+			"name": "cse170 a10",
             "deadline": true,
-			"date": "02/19/2016",
+			"date": "03/10/2016",
 			"time": "10:00 PM",
             "created": 1,
             "challenge": 1
 		},
 		{
             "id": 2,
-			"name": "cse120 pa3",
+			"name": "cse120 pa4",
             "deadline": true,
-			"date": "02/22/2016",
+			"date": "03/10/2016",
 			"time": "09:00 PM",
             "created": 1,
             "challenge": 1
@@ -32,7 +32,7 @@
             "id": 3,
 			"name": "cse132a jdbc",
             "deadline": true,
-			"date": "02/23/2016",
+			"date": "03/10/2016",
 			"time": "07:00 PM",
             "created": 1,
             "challenge": 0
@@ -65,40 +65,59 @@
 
 	"messages": [
 	    {
+            "id": 1,
             "subject": "tonylydoesntlie has challenged you",
             "body": "tonylydoesntlie has challenged you to do these tasks",
             "date": "02/09/2016",
-            "status": 1
+            "status": 1,
+            "challenge": true
 
 	    },
 	    {
+            "id": 2,
             "subject": "janedoe123 has challenged you",
             "body": "janedoe123 has challenged you to do these tasks",
             "date": "02/10/2016",
-            "status": 1
+            "status": 1,
+            "challenge": true
 
 	    },
 	    {
+            "id": 3,
             "subject": "tonylydoesntlie has challenged you",
             "body": "tonylydoesntlie has challenged you to do these tasks",
             "date": "02/11/2016",
-            "status": 1
+            "status": 1,
+            "challenge": true
 
 	    },
 	    {
+            "id": 4,
             "subject": "johndoe858 has challenged you",
             "body": "johndoe858 has challenged you to do these tasks",
             "date": "02/11/2016",
-            "status": 1
+            "status": 1,
+            "challenge": true
 
 	    },
 	    {
+            "id": 5,
             "subject": "johndoe858 has challenged you",
             "body": "johndoe858 has challenged you to do these tasks",
             "date": "02/12/2016",
-            "status": 1
+            "status": 1,
+            "challenge": true
 
-	    }
+	    },
+        {
+            "id": 6,
+            "subject": "tonylydoesntlie wants to be friends",
+            "body": "tonylydoesntlie has sent you a friend request!",
+            "date": "02/01/2016",
+            "status": 1,
+            "challenge": false
+
+        }
 	],
     
     "friend_tasks": {

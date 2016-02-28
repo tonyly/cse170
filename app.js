@@ -10,7 +10,6 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var home = require('./routes/home');
-//var home2 = require('./routes/home2');
 var friends = require('./routes/friends');
 var myprofile = require('./routes/myprofile');
 var settings = require('./routes/settings');
@@ -45,13 +44,12 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-//app.get('/home', home.showHome);
+//app.get('/', index.userInfo);
+//app.post('/', index.userCheck);
 app.get('/home', home.view);
 app.post('/home', home.addTask);
 app.get('/home2', home.view2);
 app.post('/home2', home.addTask);
-//app.get('/home2', home2.view);
-//app.post('/home2', home2.addTask);
 app.get('/friends', friends.view);
 app.post('/friends', friends.removeFriend);
 app.get('/myprofile', myprofile.view);
@@ -59,6 +57,7 @@ app.post('/myprofile', myprofile.changeSkin);
 app.get('/settings', settings.view);
 app.post('/settings', settings.changeSettings);
 app.get('/inbox', inbox.view);
+app.post('/inbox', inbox.editMail);
 app.get('/friendprofile/:friend', friendprofile.view);
 app.get('/challenge/:friend', challenge.view);
 //app.get('/add', add.addFriend);

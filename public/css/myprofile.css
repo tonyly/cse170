@@ -25,10 +25,6 @@ hr.line {
 	font-size: 20px;
 }
 
-.glyphicon.glyphicon-envelope {
-	font-size: 20px;
-}
-
 .potatoskins img {
 	max-width: 75px;
 }
@@ -50,4 +46,8 @@ hr.line {
     border-radius: 10px;
     padding: 0px 10px 10px 10px;
 
+}
+
+#return {
+    font-size: 20px;
 }
