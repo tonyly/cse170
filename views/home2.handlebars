@@ -2,7 +2,6 @@
 <html>
 
   <head>
-    {{> homeExperiment}}
     <title>TATER TASKS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +25,25 @@
   </head>
 
 	<body>
+    <!-- NAGIVATION: FOOTER -->
+    <div id="footer">
+      <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
+        <div class="row" id="bottomNav">
+          <div class="col-xs-3 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
+          <div class="col-xs-3 text-center"><a href="/friends"/><i class="glyphicon
+          glyphicon-th-list"></i><br>Friends</div>
+          <div class="col-xs-3 text-center"><a href="/myprofile"><i class="glyphicon
+          glyphicon-user"></i><br>Profile</a></div>
+          <div class="col-xs-3 text-center"><a href="/inbox"><i class="glyphicon
+          glyphicon-envelope"></i><br>Inbox</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- END NAVIGATION: FOOTER -->
+
     <!-- BODY CODE -->
+
+
     <!-- WHITE SECTION -->
     <div class="container">
       <!-- TASK DIALOGUE: BLACK -->
@@ -46,9 +63,6 @@
         <!-- CONTENT OF THE TABS -->
         <div class="tab-content">
           <div class="tab-pane fade active in" id="home">
-            <div align="center" class="emptyMessage">
-              <h5>You have no tasks!&nbsp;&nbsp;Perhaps you should make some?</h5>
-            </div>
             <div class="list-frame">
              <ul class="list-group" id="taskList" data-toggle="modal" data-backdrop="static" data-target="#editModal">
               {{#each tasks}}
@@ -71,9 +85,6 @@
           </div>
 
           <div class="tab-pane fade" id="challenge">
-            <div align="center" class="emptyMessage">
-              <h5>You have no ongoing challenges!&nbsp;&nbsp;Go challenge a friend!</h5>
-            </div>
             <div class="list-frame">
                <ul class="list-group" id="challengelist">
                 {{#each friends}}
@@ -89,18 +100,14 @@
         </div>
         <hr class="line" />
         <div align="right">
-          {{#if testing}}
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static"
-                  data-target="#friendModal" id="challengebutton" style="background-color: green">
-              Challenge A Friend
-          </button>
-          {{/if}}
           <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static"
                   data-target="#taskModal" id="addbutton">
             Add Task
           </button>
+          <button type="button" class="btn btn-primary btn-lg" id="challengeButton">
+            Challenge A Friend
+          </button>
         </div>
-      </div>
 
         <!-- MODAL TO ADD TASKS -->
         <div id="taskModal" class="modal fade" role="dialog">
@@ -132,7 +139,7 @@
                     <!-- DATE -->
                     <div class="form-group">
                       <div class="input-group date" >
-                        <span class="input-group-addon" id="taskCalendar">
+                        <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                         <input type="text" class="form-control" id="taskDate" placeholder="Date"/>
@@ -145,7 +152,7 @@
                         <span class="input-group-addon">
                           <i class="glyphicon glyphicon-time"></i>
                         </span>
-                        <input type="text" class="form-control " id="taskTime" placeholder="Time"/>
+                        <input type="text" class="form-control" id="taskTime" placeholder="Time"/>
                       </div>
                     </div>
                   </div>
@@ -159,6 +166,7 @@
             </div>
           </div>
         </div>
+      </div>
 
 
       <!-- MODAL TO EDIT TASKS -->
@@ -190,8 +198,8 @@
                     <!-- DATE -->
                     <div class="form-group">
                       <div class="input-group date">
-                        <span class="input-group-addon" id="editCalendar">
-                          <i class="glyphicon glyphicon-calendar" ></i>
+                        <span class="input-group-addon">
+                          <i class="glyphicon glyphicon-calendar"></i>
                         </span>
                         <input type="text" class="form-control" id="editDate" value="Deadline Date"/>
                       </div>
@@ -221,65 +229,13 @@
             </div>
           </div>
 
-
-        <!-- MODAL TO CHALLENGE FRIENDS -->
-        <div id="friendModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- MODAL HEADER -->
-                    <div class="modal-header">
-                        <button type="button" class="close" onclick="cancelAdd()" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">PICK A FRIEND TO CHALLENGE!</h4>
-                    </div>
-                    <!-- MODAL BODY: FORM -->
-                    <div class="modal-body">
-
-                        <hr/>
-                        <div role="form">
-                            <!-- TASK NAME -->
-                            <ul class="list-group" id="friendChallenge">
-                                {{#each friends}}
-                                    <a href="/friendprofile/{{name}}">
-                                        <li class="list-group-item"><h4> {{name}}</h4></li>
-                                    </a>
-                                {{/each}}
-                            </ul>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="friendCancel">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
       {{#each user}}
-      <h5><div id="pointContainer">&nbsp;&nbsp;&nbsp;&nbsp;POINTS: {{points}}</div><img id="companion" src={{avatarURL}}
-              width="75"
-      /></h5>
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;POINTS: {{points}} <img id="companion" src={{avatarURL}} width="75" /></h5>
       {{/each}}
-      <div id="pointIncrease">You earned 10 points!</div>
 
     </div>
-
-    <!-- NAGIVATION: FOOTER -->
-    <div id="footer">
-        <div class="navbar navbar-default col-xs-12 navbar-fixed-bottom">
-            <div class="row" id="bottomNav">
-                <div class="col-xs-3 text-center"><a href="/home"><i class="glyphicon glyphicon-home"></i><br>Home</a></div>
-                <div class="col-xs-3 text-center"><a href="/friends"/><i class="glyphicon
-          glyphicon-th-list"></i><br>Friends</div>
-                <div class="col-xs-3 text-center"><a href="/myprofile"><i class="glyphicon
-          glyphicon-user"></i><br>Profile</a></div>
-                <div class="col-xs-3 text-center"><a href="/inbox"><i class="glyphicon
-          glyphicon-envelope"></i><br>Inbox</a></div>
-            </div>
-        </div>
-    </div>
-    <!-- END NAVIGATION: FOOTER -->
     <!-- END BODY CODE -->
-    {{> googleAnalytics}}
+
 	</body>
   <!--    JAVASCRIPT    -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -296,6 +252,5 @@
   <!-- Javascript for the timepicker -->
   <script src="js/bootstrap-timepicker.min.js"></script>
 
-  {{> googleAnalytics}}
   <!--    END JAVASCRIPT    -->
 </html>
