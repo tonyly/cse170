@@ -12,6 +12,7 @@
 	"tasks": [
 		{
 			"id": 1,
+            "cid": 0,
 			"name": "cse170 a10",
             "deadline": true,
 			"date": "03/10/2016",
@@ -21,6 +22,7 @@
 		},
 		{
             "id": 2,
+            "cid": 0,
 			"name": "cse120 pa4",
             "deadline": true,
 			"date": "03/10/2016",
@@ -30,6 +32,7 @@
 		},
 		{
             "id": 3,
+            "cid": 0,
 			"name": "cse132a jdbc",
             "deadline": true,
 			"date": "03/10/2016",
@@ -39,6 +42,7 @@
 		},
         {
           "id": 4,
+          "cid": 0,
           "name": "cry into the night",
           "deadline": false,
           "date": "",
@@ -55,10 +59,6 @@
         },
         {
         	"name": "janedoe123",
-        	"challenges": 0
-        },
-        {
-        	"name": "johndoe858",
         	"challenges": 0
         }
 	],
@@ -128,40 +128,56 @@
             "wins" : "2",
             "losses" : "1",
             "ties" : "1",
+            "friend": true,
             "tasks" :[
                 {
                     "id": 1,
+                    "cid": 0,
                     "name": "cse170 a6",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
                     "challenge": 1
                 },
                 {
-                    "id": 1,
+                    "id": 2,
+                    "cid": 0,
                     "name": "cse170 a7",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
                     "challenge": 0
                 },
                 {
-                    "id": 1,
+                    "id": 3,
+                    "cid": 0,
                     "name": "cse170 a8",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
                     "challenge": 0
                 },
                 {
-                    "id": 1,
+                    "id": 4,
+                    "cid": 0,
                     "name": "cse170 a9",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
                     "challenge": 0
                 },
                 {
-                    "id": 1,
+                    "id": 5,
+                    "cid": 0,
                     "name": "cse170 a10",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
                     "challenge": 0
                 }
             ]
@@ -174,12 +190,16 @@
             "wins" : "3",
             "losses" : "0",
             "ties" : "2",
+            "friend": false,
             "tasks" : [
                 {
                     "id": 1,
+                    "cid": 0,
                     "name": "cse170 a6",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00pm",
+                    "created": 1,
                     "challenge": 1
                 }
             ]
@@ -192,16 +212,31 @@
             "wins" : "8",
             "losses" : "1",
             "ties" : "0",
+            "friend": true,
             "tasks" : [
                 {
                     "id": 1,
+                    "cid": 0,
                     "name": "cse170 a6",
+                    "deadline": true,
                     "date": "02/19/2016",
                     "time": "10:00pm",
+                    "created": 1,
                     "challenge": 1
                 }
             ]
                        
+        },
+        "maskedanomaly": {
+          "name" : "maskedanomaly",
+          "avatarURL" : "../img/placeholders/locked.png",
+          "points" : "0",
+          "wins" : "0",
+          "losses" : "1",
+          "ties" : "0",
+          "friend": false,
+          "tasks" : [
+          ]
         }
         
     },

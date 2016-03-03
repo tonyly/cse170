@@ -10,13 +10,41 @@ $(document).ready(function() {
  */
 function initializePage() {
     $('#challengeBTN').click(challengeClick);
+    $('#request').click(sendRequest);
 
 }
 
 function challengeClick(e) {
     e.preventDefault();
 
+    var numOfTasks = $('#tasklist li').length;
+
+    if (numOfTasks === 0) {
+        alert("Whoa!  It seems like your friend has no tasks!  Maybe you should wait before issuing "+
+        "a challenge to them!");
+    }
+    else {
+        alert("Challenge Sent! Waiting on reply from friend.");
+    }
     ga('send', 'event', 'home', 'click');
+
+}
+
+function sendRequest(e) {
+    e.preventDefault();
+
+    var fName = $('#fName').text();
+
+    if( confirm("Are you sure you want to send a friend request to " + fName + "?")) {
+        var data = {
+            "name": fName,
+            "challenge": 0
+        };
+        data.type= "add";
+        $.post('/friendprofile/' + fName, data, function(res) {});
+        window.location.href = "/friends";
+    }
+
 
 }
 

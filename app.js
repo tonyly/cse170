@@ -59,6 +59,7 @@ app.post('/settings', settings.changeSettings);
 app.get('/inbox', inbox.view);
 app.post('/inbox', inbox.editMail);
 app.get('/friendprofile/:friend', friendprofile.view);
+app.post('/friendprofile/:friend', friendprofile.addFriend);
 app.get('/challenge/:friend', challenge.view);
 //app.get('/add', add.addFriend);
 // Example route
