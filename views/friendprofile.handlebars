@@ -56,20 +56,12 @@
       </ul>
     </div>
     <div align = "center">
-    <a href='/home'><button type="button" id="sendChallenge" class="btn-btn-primary" onclick="alert('Challenge Sent! Waiting on reply from friend.')">Send Challenge</button></a>
-  </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
       <a href='/home'><button type="button" class="btn btn-primary" onclick="alert('Challenge Sent! Waiting on reply ' +
-     'from friend.')">Send Challenge</button></a>
+     'from friend.')" id="challengeBTN">Send Challenge</button></a>
     </div>
     </div>
-
+   </div>
 
 
         <!-- NAGIVATION: FOOTER -->
@@ -87,16 +79,13 @@
             </div>
         </div>
         <!-- END NAVIGATION: FOOTER -->
-</body>
+    <!-- Make a different javascript file for this in the future -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-  <!-- Make a different javascript file for this in the future -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-   <script src="js/home.js"></script>
-  {{> googleAnalytics}}
+    <script src="js/home.js"></script>
+    {{> googleAnalytics}}
 </body>
 </html>
