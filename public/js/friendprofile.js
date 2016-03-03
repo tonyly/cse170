@@ -25,8 +25,10 @@ function challengeClick(e) {
     }
     else {
         alert("Challenge Sent! Waiting on reply from friend.");
+        ga('send', 'event', 'home', 'click');
+        window.location.href = "/home";
     }
-    ga('send', 'event', 'home', 'click');
+
 
 }
 
