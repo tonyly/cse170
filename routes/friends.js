@@ -16,6 +16,7 @@ exports.removeFriend = function(req, res) {
                 break;
             }
         }
+        data.friend_tasks[postData.name].friend = false;
     }
 
 };
