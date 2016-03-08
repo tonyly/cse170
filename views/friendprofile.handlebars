@@ -50,18 +50,24 @@
 
         {{#each tasks}}
         <a href="#">
-          <li class="list-group-item" id="{{id}}">
-            <h4 class="list-group-item-heading">
-              <input type="radio" name="friendTask" value={{name}}/> {{name}}
-            </h4>
-            <p>Deadline: {{date}}, {{time}}</p>
+          <li class="list-group-item" id="fTask{{id}}">
+            {{#if deadline}}
+              <h4 class="list-group-item-heading">
+                <input type="radio" id="task{{id}}" name="friendTask" value={{name}}/> {{name}}
+              </h4>
+              <p>Deadline: {{date}}, {{time}}</p>
+            {{else}}
+              <h4 class="list-group-item-heading">
+                <input type="radio" id="task{{id}}" name="friendTask" value={{name}}/> {{name}}
+              </h4>
+              <p>Deadline: None</p>
+            {{/if}}
           </li>
         </a>  
         {{/each}}
       </ul>
     </div>
     <div align = "center">
-
       <a href='/home'><button type="button" class="btn btn-primary" id="challengeBTN">Send Challenge</button></a>
     </div>
         {{/if}}

@@ -3,6 +3,7 @@ html, body {
     background: url("../img/bg-field.png") no-repeat fixed center;
     background-size: cover;
     height: 100%;
+    width: 100%;
 }
 
 hr.line {
@@ -46,6 +47,11 @@ hr.line {
     border-radius: 10px;
     padding: 0px 10px 10px 10px;
 
+}
+
+.list-group-item {
+    position: relative;
+    min-width: 75%;
 }
 
 #return {

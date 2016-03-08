@@ -2,7 +2,7 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-	data["testing"] = false;
+	//data["testing"] = false;
 
 	// re-ID all tasks
 	if (data.tasks.length != 0) {
@@ -16,7 +16,7 @@ exports.view = function(req, res){
 };
 
 
-exports.view2 = function(req, res) {
+/*exports.view2 = function(req, res) {
 	data["testing"] = true;
 
 	// re-ID all tasks
@@ -28,7 +28,7 @@ exports.view2 = function(req, res) {
 	}
 
 	res.render('home', data);
-};
+};*/
 
 exports.addTask = function (req, res) {
 	var postData = req.body;

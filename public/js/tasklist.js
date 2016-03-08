@@ -113,11 +113,13 @@ function addList(e) {
 
             var data = {
                 "id": task,
+                "cid": 0,
                 "name": name,
                 "deadline": true,
                 "date": date,
                 "time": time,
-                "created": createDate + ", " + createTime
+                "created": createDate + ", " + createTime,
+                "challenge": 0
             };
             data.type= "post";
             $.post('/home', data, function(res) {});

@@ -1,7 +1,7 @@
 {   "user": [
         {
             "username": "meep",
-            "avatarURL": "img/potatoskins/00-default.png",
+            "avatarURL": "../img/potatoskins/00-default.png",
             "points": 11270,
             "wins": 10,
             "losses": 10,
@@ -15,27 +15,27 @@
             "cid": 0,
 			"name": "cse170 a10",
             "deadline": true,
-			"date": "03/10/2016",
+			"date": "03/10/2017",
 			"time": "10:00 PM",
             "created": 1,
-            "challenge": 1
+            "challenge": 0
 		},
 		{
             "id": 2,
             "cid": 0,
 			"name": "cse120 pa4",
             "deadline": true,
-			"date": "03/10/2016",
+			"date": "03/10/2017",
 			"time": "09:00 PM",
             "created": 1,
-            "challenge": 1
+            "challenge": 0
 		},
 		{
             "id": 3,
             "cid": 0,
 			"name": "cse132a jdbc",
             "deadline": true,
-			"date": "03/10/2016",
+			"date": "03/10/2017",
 			"time": "07:00 PM",
             "created": 1,
             "challenge": 0
@@ -52,10 +52,14 @@
         }
 	],
 
+    "challenges": [
+
+    ],
+
 	"friends": [
         {
              "name": "tonylydoesntlie",
-             "challenges": 1
+             "challenges": 0
         },
         {
         	"name": "janedoe123",
@@ -123,7 +127,7 @@
     "friend_tasks": {
         "tonylydoesntlie" : {
             "name" : "tonylydoesntlie",
-            "avatarURL" : "../img/placeholders/p02.png",
+            "avatarURL" : "../img/potatoskins/05-bat.png",
             "points" : "1000",
             "wins" : "2",
             "losses" : "1",
@@ -135,17 +139,17 @@
                     "cid": 0,
                     "name": "cse170 a6",
                     "deadline": true,
-                    "date": "02/19/2016",
+                    "date": "03/19/2016",
                     "time": "10:00 PM",
                     "created": 1,
-                    "challenge": 1
+                    "challenge": 0
                 },
                 {
                     "id": 2,
                     "cid": 0,
                     "name": "cse170 a7",
                     "deadline": true,
-                    "date": "02/19/2016",
+                    "date": "03/19/2016",
                     "time": "10:00 PM",
                     "created": 1,
                     "challenge": 0
@@ -155,7 +159,7 @@
                     "cid": 0,
                     "name": "cse170 a8",
                     "deadline": true,
-                    "date": "02/19/2016",
+                    "date": "03/19/2016",
                     "time": "10:00 PM",
                     "created": 1,
                     "challenge": 0
@@ -165,7 +169,7 @@
                     "cid": 0,
                     "name": "cse170 a9",
                     "deadline": true,
-                    "date": "02/19/2016",
+                    "date": "03/19/2016",
                     "time": "10:00 PM",
                     "created": 1,
                     "challenge": 0
@@ -175,8 +179,18 @@
                     "cid": 0,
                     "name": "cse170 a10",
                     "deadline": true,
-                    "date": "02/19/2016",
+                    "date": "03/19/2016",
                     "time": "10:00 PM",
+                    "created": 1,
+                    "challenge": 0
+                },
+                {
+                    "id": 6,
+                    "cid": 0,
+                    "name": "DESTROY THE WORLD",
+                    "deadline": false,
+                    "date": "03/11/2016",
+                    "time": "01:00 PM",
                     "created": 1,
                     "challenge": 0
                 }
@@ -185,7 +199,7 @@
         },
         "johndoe858" : {
             "name" : "johndoe858",
-            "avatarURL" : "../img/placeholders/p07.png",
+            "avatarURL" : "../img/potatoskins/02-luigi.png",
             "points" : "1100",
             "wins" : "3",
             "losses" : "0",
@@ -197,8 +211,8 @@
                     "cid": 0,
                     "name": "cse170 a6",
                     "deadline": true,
-                    "date": "02/19/2016",
-                    "time": "10:00pm",
+                    "date": "03/19/2016",
+                    "time": "10:00 PM",
                     "created": 1,
                     "challenge": 1
                 }
@@ -207,7 +221,7 @@
         },
         "janedoe123": {
             "name" : "janedoe123",
-            "avatarURL" : "../img/placeholders/p03.png",
+            "avatarURL" : "../img/potatoskins/04-link.png",
             "points" : "2034",
             "wins" : "8",
             "losses" : "1",
@@ -219,8 +233,8 @@
                     "cid": 0,
                     "name": "cse170 a6",
                     "deadline": true,
-                    "date": "02/19/2016",
-                    "time": "10:00pm",
+                    "date": "03/19/2016",
+                    "time": "10:00 PM",
                     "created": 1,
                     "challenge": 1
                 }
@@ -248,7 +262,7 @@
         "status": "unlocked",
         "cost": 0,
         "blurb": "This wee spud knows not what to do with its wee spud life.",
-        "URL": "img/potatoskins/00-default.png"
+        "URL": "../img/potatoskins/00-default.png"
       },
       {
         "id": 1,
@@ -256,7 +270,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Wahoo!",
-        "URL": "img/potatoskins/01-mario.png"
+        "URL": "../img/potatoskins/01-mario.png"
       },
       {
         "id": 2,
@@ -264,7 +278,7 @@
         "status": "locked",
         "cost": 50,
         "blurb": "Wait, didn't we just see you?  Your brother?  Oh, Potario has a brother...?",
-        "URL": "img/potatoskins/02-luigi.png"
+        "URL": "../img/potatoskins/02-luigi.png"
       },
       {
         "id": 3,
@@ -272,7 +286,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "I'm sorry, but your princess is in another castle.",
-        "URL": "img/potatoskins/03-peach.png"
+        "URL": "../img/potatoskins/03-peach.png"
       },
       {
         "id": 4,
@@ -280,7 +294,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Wielding the potato peeler of evil's bane, this Spud of Time-- wait, is that a pot?!",
-        "URL": "img/potatoskins/04-link.png"
+        "URL": "../img/potatoskins/04-link.png"
       },
       {
         "id": 5,
@@ -288,7 +302,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "I am vengeance.  I am the night.  I am... BAT SPUD!",
-        "URL": "img/potatoskins/05-bat.png"
+        "URL": "../img/potatoskins/05-bat.png"
       },
       {
         "id": 6,
@@ -296,7 +310,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "I am Spud'ganis.  I am a-tater.",
-        "URL": "img/potatoskins/06-demon.png"
+        "URL": "../img/potatoskins/06-demon.png"
       },
       {
         "id": 7,
@@ -304,7 +318,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna give you up.",
-        "URL": "img/placeholders/p02.png"
+        "URL": "../img/placeholders/p02.png"
       },
       {
         "id": 8,
@@ -312,7 +326,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna let you down.",
-        "URL": "img/placeholders/p03.png"
+        "URL": "../img/placeholders/p03.png"
       },
       {
         "id": 9,
@@ -320,7 +334,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna run around and desert you.",
-        "URL": "img/placeholders/p04.png"
+        "URL": "../img/placeholders/p04.png"
       },
       {
         "id": 10,
@@ -328,7 +342,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna make you cry.",
-        "URL": "img/placeholders/p05.png"
+        "URL": "../img/placeholders/p05.png"
       },
       {
         "id": 11,
@@ -336,7 +350,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna say good-bye.",
-        "URL": "img/placeholders/p06.png"
+        "URL": "../img/placeholders/p06.png"
       },
       {
         "id": 12,
@@ -344,7 +358,7 @@
         "status": "locked",
         "cost": 1000,
         "blurb": "Never gonna tell a lie and hurt you.",
-        "URL": "img/placeholders/p07.png"
+        "URL": "../img/placeholders/p07.png"
       }
     ]
 }

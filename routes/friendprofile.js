@@ -17,13 +17,17 @@ exports.view = function(req, res){
 
 exports.addFriend = function(req, res) {
 	var postData = req.body;
-	console.log(postData.name);
 
 	var type = postData.type;
 	if (type === "add") {
 		postData.challenge = 0;
 		data.friends.push(postData);
 		data.friend_tasks[postData.name].friend = true;
-		console.log(data);
+	}
+	else if (type === "challenge") {
+        postData.deadline = postData.deadline === "true" ? true : false;
+        postData.id = data.challenges.length + 1;
+        data.challenges.push(postData);
+        console.log(data);
 	}
 }
